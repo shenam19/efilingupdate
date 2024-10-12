@@ -26,7 +26,7 @@ class OrganizationHierarchy extends Model implements Auditable
 
     protected $fillable = [
         'name_short',
-        'name',        
+        'name',
         'type_id',
         'belongs_to_id',
         'incoming_register',
@@ -40,7 +40,7 @@ class OrganizationHierarchy extends Model implements Auditable
 
     public function parent(): BelongsTo
     {
-        return $this->belongsTo(OrganizationHierarchy::class,'belongs_to_id','id');
+    return $this->belongsTo(OrganizationHierarchy::class,'belongs_to_id','id');
     }
 
     public function recipients():HasMany
@@ -57,7 +57,7 @@ class OrganizationHierarchy extends Model implements Auditable
     {
         return $this->hasMany(Message::class, 'organization_id');
     }
-    
+
     public function folder()
     {
         return $this->hasMany(folder::class, 'organization_id');
@@ -134,7 +134,7 @@ class OrganizationHierarchy extends Model implements Auditable
     public function allRecipients(): Collection
     {
         $allRecipients = $this->recipients;
-        
+
         $stack = $this->children()->get();
         while($stack->count())
         {
@@ -156,7 +156,7 @@ class OrganizationHierarchy extends Model implements Auditable
     public function allMessages(): Collection
     {
         $allMessages = $this->messages;
-        
+
         $stack = $this->children()->get();
         while($stack->count())
         {
@@ -178,7 +178,7 @@ class OrganizationHierarchy extends Model implements Auditable
     public function allFolders(): Collection
     {
         $allFolders = $this->folder;
-        
+
         $stack = $this->children()->get();
         while($stack->count())
         {
@@ -248,14 +248,14 @@ class OrganizationHierarchy extends Model implements Auditable
     }
 
     public function getOrgChart()
-    {      
+    {
         $tree = $this->select('id','name_short','name')
             ->where('id',$this->id)
             ->first();
         $this->traverseOrgTree($tree, $tree);
-     
+
         return json_encode([$tree]);
-        
+
     }
 
     public static function getAllOrgCharts()
@@ -284,7 +284,7 @@ class OrganizationHierarchy extends Model implements Auditable
         $root = auth()->user()->organization->getRoot();
         $orgs = $root->allChildren();
         $orgs[] = $root;
- 
+
         return $orgs;
     }
 
@@ -304,7 +304,7 @@ class OrganizationHierarchy extends Model implements Auditable
     }
 
     private function traverseOrgsTree()
-    {   
+    {
         $suborgs = $this->children()
             ->select('id','name_short as label')
             ->withCount('children')

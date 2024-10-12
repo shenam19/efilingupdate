@@ -9,6 +9,17 @@
 4. Keep the repo sync with the upstream/dev (Click fetch upstream button in your GitHub repo -> fetch and merge)
 
 5. Pull request to dev branch
+
+## How to run test
+
+1.  ```
+    php artisan test 
+    ```
+
+2. if specifically want to run the unit tests: run
+    ```
+    php artisan test tests/unit
+    ```
     
 
 ## How to install using Docker

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class OrganizationType extends Model Model implements Auditable
+class OrganizationType extends Model implements Auditable
 {
     use HasFactory;
     use \OwenIt\Auditing\Auditable;

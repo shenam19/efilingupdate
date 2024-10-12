@@ -15,6 +15,8 @@ class ThreadFactory extends Factory
     {
         return [
             'subject' => $this->faker->sentence(),
+            'created_at' => now(),
+            'updated_at' => now()
         ];
     }
 }

@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Contact;
+use App\Models\Thread;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MessageFactory extends Factory
@@ -14,6 +17,10 @@ class MessageFactory extends Factory
     public function definition()
     {
         return [
+            'threads' => Thread::factory(),
+            'is_user' => $this->faker()->boolean(),
+            'user_id' => User::factory(),
+            'contact_id' => Contact::factory(),
             'remarks' => $this->faker->text()
         ];
     }
