@@ -1,9 +1,9 @@
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header user-navbar navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
-    <ul class="navbar-nav d-flex flex-wrap">
+    <ul class="navbar-nav top-nav-menu d-flex flex-wrap">
         
-        <li class="nav-item  d-none d-sm-inline-block">
+        <li class="nav-item d-none d-sm-inline-block">
             <a id="dashboard" href="{{ route('dashboard') }}"
                 class="nav-link {{request()->routeIs('dashboard') ? 'navActive' : ''}}" data-toggle="tooltip"
                 data-placement="bottom" title="Dashboard">མདུན་འཆར།</a>
