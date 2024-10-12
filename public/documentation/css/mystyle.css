@@ -1,0 +1,53 @@
+@font-face{
+	font-family: Ouchan2;
+	src:url("../fonts/Monlam_Uni_OuChan2.ttf");
+}
+
+.app{
+    font-family:Ouchan2;
+}
+.sidebar-header img {
+    height: 7rem !important;
+}
+
+.accordion-collapse{
+    background-color: hsla(63, 67%, 89%, 0.712);
+}
+
+h2.text-accordian{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+p.text-para {
+    font-size: 1.2rem;
+}
+
+li.text-para {
+    font-size: 1.2rem;
+}
+
+.card-header{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.card-body{
+    font-size: 1.3rem;
+}
+
+.card-text{
+    padding-left: 5rem;
+    padding-right: 2rem;
+    font-size: 1.3rem;
+
+
+}
+
+.page-heading {
+    padding-top: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+

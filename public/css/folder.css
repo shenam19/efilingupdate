@@ -1,0 +1,41 @@
+.file:hover{
+    background:#eee;
+    cursor:pointer;
+}
+
+.active{
+    background:#ddd;
+}
+
+.dropdown-btn i{
+    font-size:20px;
+    margin-right:6px;
+    color:#666;
+}
+
+.dropdown-btn:hover{
+    color:#444;
+}
+
+.file_name {
+    max-width:250px;
+    overflow: hidden; 
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+
+.file_name i, .dropdown-btn i, .file-menu i{
+    vertical-align:middle;
+}
+
+.file-menu .file-options{
+    color:#666;
+}
+.file-menu .file-options:hover{
+    color:#3a3a3a;
+}
+
+.file-menu:hover{
+    color:#888;
+}
