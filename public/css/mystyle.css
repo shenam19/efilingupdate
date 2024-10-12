@@ -63,9 +63,7 @@ td,
     margin: 0;
 
     li {
-    
         a {
-
             &.navActive {
                 background-color: #fff;
                 color: #000 !important;
@@ -740,4 +738,14 @@ table.table-striped.table-hover tbody tr:hover {
 .material-switch > input[type='checkbox']:checked + label::after {
     background: inherit;
     left: 20px;
+}
+
+.unknown-error {
+    text-align: center;
+    padding: 1em;
+
+    p {
+        margin-top: 4em;
+        font-size: 2.4em;
+    }
 }
