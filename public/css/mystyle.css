@@ -14,6 +14,8 @@ body {
 :root {
     --primary: #457b9d;
     --secondary: #1d3557;
+    --complementary: #00a8ff;
+    --complementary-font-color: #000;
 }
 
 i {
@@ -294,10 +296,114 @@ a.btn.login-button.btn-lg:hover {
 }
 */
 
+.e-input-control {
+    width: 100%;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+}
+
+input[type='email'].e-input-control,
+input[type='password'].e-input-control {
+    border-radius: 5px;
+}
+
+button.e-input-control {
+    padding: 0.5em 1em;
+    border-radius: 1;
+    background-color: var(--primary);
+    border: none;
+    color: #fff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    &:hover {
+    }
+}
+
+.login-page {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+
+    .banner {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+
+        .message {
+            grid-column: 2 / 3;
+            text-align: center;
+
+            h1 {
+                margin-top: 1em;
+            }
+        }
+        .logo {
+            width: 300px;
+        }
+    }
+
+    .login {
+        height: 100%;
+        padding: 0em 2em;
+        background-color: var(--secondary);
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 100px;
+
+        .login-card {
+            margin-top: 2em;
+            border-radius: 5px;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+                rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+            .login-field {
+                margin-top: 1em;
+            }
+        }
+
+        .footer {
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+
+                li {
+                    a {
+                        padding: 0em 1em;
+                        color: #fff;
+                        border-right: solid 1px #ccc;
+                    }
+
+                    &:last-child {
+                        a {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+
+            .claim {
+                color: #fff;
+                text-align: right;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
 .welcoming {
     color: #504e4e;
     /* background: #4b49490c; */
     text-align: center;
+}
+
+*[data-lang='en'] {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 

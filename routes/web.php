@@ -39,14 +39,14 @@ Route::get('/include-time-in-date',function(){
         $received_date->hour = $setDate->hour;
         $received_date->minute = $setDate->minute;
         $received_date->second = $setDate->second;
-        $record->update(['dispatched_date'=>$dispatched_date,'received_date'=>$received_date]);
+        $record->update(['dispatched_date' => $dispatched_date, 'received_date' => $received_date]);
     }
     dd("done");
-    
+
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 })->name('home');
 
 Route::get('/launch', function () {

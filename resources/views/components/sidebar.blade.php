@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-no-expand ">
     <!-- Brand Logo -->
-    <a href="{{ route('home') }}" class="brand-link">
+    <a href="{{ url('/dashboard')}}" class="brand-link">
         <img src="{{ asset('img/CTALogo.png') }}" alt="CTA e-filing"
             class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light" data-toggle="tooltip" data-placement="bottom" title="e-filing">གློག་རྡུལ་ཡིག་ཚགས།</span>
