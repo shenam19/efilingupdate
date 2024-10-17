@@ -1,15 +1,15 @@
-<form method="POST" action="{{route('record.store',$type)}}" enctype='multipart/form-data'>
+<form method="POST" action="{{route('record.store',$type)}}" enctype='multipart/form-data' id="recordStoreForm">
     @csrf
     <div class="card-body">
         <div class="form-row">
             <div class="col-4">
                 <x-outgoing-letter-no :outgoingNo="$register"/>
             </div>
-                                          
+
             <div class="col-3">
                 <div class="form-group">
-                    <label>སྡེ་ཚན།</label>   
-                    <x-section-tree-dropdown id="orgTreeSelectAdd" :orgs="$orgChart" name="section"/>                                     
+                    <label>སྡེ་ཚན།</label>
+                    <x-section-tree-dropdown id="orgTreeSelectAdd" :orgs="$orgChart" name="section"/>
                 </div>
             </div>
 
@@ -45,12 +45,12 @@
             <div class="col-4">
                 <div class="form-group">
                     <label>ནང་ཁུལ་གཏོང་ཡུལ།</label>
-                    <x-dropdown 
-                        :option="$frontDesks" 
-                        name="internalRecipients[]" 
-                        id="recipientSelect" 
-                        :multiple="true" 
-                        placeholder="བསྐུར་ཡུལ།.." 
+                    <x-dropdown
+                        :option="$frontDesks"
+                        name="internalRecipients[]"
+                        id="recipientSelect"
+                        :multiple="true"
+                        placeholder="བསྐུར་ཡུལ།.."
                     />
                 </div>
             </div>
@@ -117,7 +117,7 @@
                     <option>དེབ་སྐྱེལ་སྦྲག་ཡིག/Register post</option>
                     <option>ཀོོ་རི་ཡར།/Courier</option>
                     <option>ཕེགས་/Fax</option>
-                    <option>གཞན།</option>		
+                    <option>གཞན།</option>
 		</select>
             </div>
 
@@ -136,9 +136,10 @@
 
     <div class="card-footer">
         <div class="float-right">
-            <button type="submit" class="btn btn-primary" name="status" value="sent"><i
+            <button type="submit" class="btn btn-primary" name="status" value="sent" id="submitButton"><i
                     class="far fa-envelope px-1 align-middle"></i>གསོག་འཇོག་བྱོས།</button>
         </div>
     </div>
 
 </form>
+<script src="{{ mix('js/formSubmissionHandler.js') }}"></script>

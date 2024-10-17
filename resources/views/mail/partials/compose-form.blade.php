@@ -8,7 +8,7 @@
                     </h3>
                 </div>
                 @if($type === 'compose')
-                <form method="POST" action="{{route('send')}}">
+                <form method="POST" action="{{route('send')}}" id="recordStoreForm">
 
                     @else
                     <form method="POST" action="{{route('draft.send', $message)}}">
@@ -21,28 +21,28 @@
                                     <div class="form-group">
                                         <label>བསྐུར་ཡུལ།</label><span class="text-danger">*</span>
                                         @if($type === 'draft')
-                                            <x-dropdown 
-                                                :option="$recipients" 
-                                                name="recipients[]" 
-                                                id="recipientSelect" 
-                                                :multiple="true" 
+                                            <x-dropdown
+                                                :option="$recipients"
+                                                name="recipients[]"
+                                                id="recipientSelect"
+                                                :multiple="true"
                                                 placeholder="བསྐུར་ཡུལ།"
-                                                :selected="$message->recipients->pluck('user_id')->toArray()" 
+                                                :selected="$message->recipients->pluck('user_id')->toArray()"
                                             />
                                         @else
-                                            <x-dropdown 
-                                                :option="$recipients" 
-                                                name="recipients[]" 
-                                                id="recipientSelect" 
-                                                :multiple="true" 
-                                                placeholder="བསྐུར་ཡུལ།" 
+                                            <x-dropdown
+                                                :option="$recipients"
+                                                name="recipients[]"
+                                                id="recipientSelect"
+                                                :multiple="true"
+                                                placeholder="བསྐུར་ཡུལ།"
                                             />
                                         @endif
                                         @error('recipients')
                                         <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}
                                         </div>
                                         @enderror
-           
+
                                 </div>
                             </div>
                             <div class="col-3">
@@ -71,40 +71,40 @@
                                     </span>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-3">
                                     <div class="form-group">
                                         <label>ཡིག་ཁུག</label>
                                         @if($type === 'draft')
-                                            <x-dropdown 
-                                                :option="$fileTree" 
-                                                name="folder[]" 
-                                                id="fileSelect" 
-                                                :multiple="true" 
-                                                placeholder="འདེམས།"  
-                                                :selected="$message->folders->pluck('id')->toArray()" 
+                                            <x-dropdown
+                                                :option="$fileTree"
+                                                name="folder[]"
+                                                id="fileSelect"
+                                                :multiple="true"
+                                                placeholder="འདེམས།"
+                                                :selected="$message->folders->pluck('id')->toArray()"
                                             />
                                         @else
-                                            <x-dropdown 
-                                                :option="$fileTree" 
-                                                name="folder[]" 
-                                                id="fileSelect" 
-                                                :multiple="true" 
-                                                placeholder="འདེམས།"  
+                                            <x-dropdown
+                                                :option="$fileTree"
+                                                name="folder[]"
+                                                id="fileSelect"
+                                                :multiple="true"
+                                                placeholder="འདེམས།"
                                             />
                                         @endif
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <x-subject/>                                    
+                                    <x-subject/>
                                 </div>
                                 <div class="col-3">
                                     <x-outgoing-letter-no :outgoingNo="$outgoing_no"/>
 
                         </div>
-                        
-                       
+
+
                             </div>
                         </div>
                         <div class="row">
@@ -159,7 +159,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="float-right">
-                            <button type="submit" name="status" value="sent" class="btn btn-primary">
+                            <button type="submit" name="status" value="sent" class="btn btn-primary" id="submitButton">
                                 <i class="far fa-envelope align-middle"></i>
                                 ཐོངས།
                             </button>
@@ -178,3 +178,36 @@
         </div>
     </div>
 </div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("recordStoreForm");
+  const submitButton = document.getElementById("submitButton");
+
+
+  if (form && submitButton) {
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const buttonValue = submitButton.value;
+      // Allow the form to submit normally, but disable the button and show loading state
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+      // Add the status field programmatically
+      const statusField = document.createElement('input');
+      statusField.type = 'hidden';
+      statusField.name = 'status';
+      statusField.value = 'sent';
+      form.appendChild(statusField);
+
+      // Submit the form
+      form.submit();
+    });
+  }
+});
+
+
+
+
+
+</script>

@@ -43,6 +43,7 @@ class User extends Authenticatable implements HasMedia, Auditable
         'name',
         'email',
         'password',
+        'intercom',
         'works_at',
         'position_id'
     ];
@@ -101,7 +102,7 @@ class User extends Authenticatable implements HasMedia, Auditable
 
     public function threads(): BelongsToMany
     {
-        return $this->belongsToMany(Thread::class,'participants','user_id','thread_id');
+        return $this->belongsToMany(Thread::class, 'participants', 'user_id', 'thread_id');
     }
 
     public function newThreadsCount(): int
@@ -112,11 +113,11 @@ class User extends Authenticatable implements HasMedia, Auditable
     public function unreadMessagesCount(): int
     {
         return DB::table('recipients')
-        ->join('messages','recipients.message_id','=','messages.id')
-        ->join('users','recipients.user_id','=','users.id')
-        ->where('users.id','=',$this->id)
-        ->where('messages.status','=','sent')
-        ->whereNull('recipients.last_read')->count();
+            ->join('messages', 'recipients.message_id', '=', 'messages.id')
+            ->join('users', 'recipients.user_id', '=', 'users.id')
+            ->where('users.id', '=', $this->id)
+            ->where('messages.status', '=', 'sent')
+            ->whereNull('recipients.last_read')->count();
     }
 
     public function threadsWithNewMessages(): Collection
@@ -130,14 +131,14 @@ class User extends Authenticatable implements HasMedia, Auditable
 
     public function organization(): BelongsTo
     {
-        return $this->belongsTo(OrganizationHierarchy::class,'works_at','id')->withDefault([
+        return $this->belongsTo(OrganizationHierarchy::class, 'works_at', 'id')->withDefault([
             'name_short' => '',
         ]);
     }
 
     public function position(): BelongsTo
     {
-        return $this->belongsTo(Position::class,'position_id','id');
+        return $this->belongsTo(Position::class, 'position_id', 'id');
     }
 
     public function scopeInternalUser(Builder $query): Builder
@@ -146,13 +147,13 @@ class User extends Authenticatable implements HasMedia, Auditable
         $orgs   = $org->allChildren()->pluck('id')->toArray();
         $orgs[] = $org->id;
 
-        return $query->whereIn('works_at',$orgs);
+        return $query->whereIn('works_at', $orgs);
     }
 
     public function getAllMedia(): MediaCollection
     {
-        if(auth()->user()->hasRole(['admin','front desk']))
-            $media = Media::where('collection_name',$this->organization->name_short)->get();
+        if (auth()->user()->hasRole(['admin', 'front desk']))
+            $media = Media::where('collection_name', $this->organization->name_short)->get();
         else
             $media  = $this->getMedia($this->organization->getRoot()->name_short);
 
@@ -164,14 +165,14 @@ class User extends Authenticatable implements HasMedia, Auditable
     public function scopeGetFrontDesk(Builder $query)
     {
         return $query->with('organization:id,name_short')
-            ->select('id','name as label','works_at')
+            ->select('id', 'name as label', 'works_at')
             ->role('front desk')
-            ->where('id','!=',auth()->id());
+            ->where('id', '!=', auth()->id());
     }
 
-    public static function promote($users, $newOrgId){
-        foreach($users as $user)
-        {
+    public static function promote($users, $newOrgId)
+    {
+        foreach ($users as $user) {
             $user->works_at = $newOrgId;
             $user->save();
         }

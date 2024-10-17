@@ -7,17 +7,17 @@
                 </x-slot>
 
                 <x-slot name="description">
-                    {{ __('ཁྱེད་ཀྱི་ངོ་སྤྲོད་གནས་ཚུལ་དང་སྤྱོད་མིང་ངོ་རྟགས་འགེང་རོགས།') }} 
+                    {{ __('ཁྱེད་ཀྱི་ངོ་སྤྲོད་གནས་ཚུལ་དང་སྤྱོད་མིང་ངོ་རྟགས་འགེང་རོགས།') }}
                 </x-slot>
             </div>
 
             <div class="col">
-                <x-slot name="form"> 
+                <x-slot name="form">
                     <!-- Profile Photo -->
                     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                         <div x-data="{photoName: null, photoPreview: null}" class="col-md-6 sm:col-span-4 p-4">
                             <!-- Profile Photo File Input -->
-                            <input type="file" 
+                            <input type="file"
                                         wire:model="photo"
                                         x-ref="photo"
                                         x-on:change="
@@ -38,7 +38,7 @@
 
                             <!-- New Profile Photo Preview -->
                             @if($photo)
-                            <div class="mt-2" x-show="photoPreview">       
+                            <div class="mt-2" x-show="photoPreview">
                                <img src="{{ $photo->temporaryUrl() }}" alt="{{ $this->user->name }}" class="rounded-circle h-25 w-25 object-cover">
                             </div>
                             @endif
@@ -69,6 +69,14 @@
                         <x-jet-label for="email" value="{{ __('སྤྱོད་མིང་ངོ་རྟགས།') }}" />
                         <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
                         <x-jet-input-error for="email" class="mt-2" />
+                    </div>
+
+
+
+                    <div class="col-span-6 sm:col-span-4">
+                        <x-jet-label for="intercom" value="{{ __('ནང་འབྲེལ་ཁ་པར།') }}" />
+                        <x-jet-input id="intercom" type="text" class="mt-1 block w-full" wire:model.defer="state.intercom" />
+                        <x-jet-input-error for="intercom" class="mt-2" />
                     </div>
                 </x-slot>
 

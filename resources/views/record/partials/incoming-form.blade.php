@@ -1,12 +1,12 @@
-<form method="POST" action="{{route('record.store',$type)}}" enctype='multipart/form-data'>
+<form method="POST" action="{{route('record.store',$type)}}" enctype='multipart/form-data' id="recordStoreForm">
     @csrf
     <div class="card-body">
         <div class="form-row">
             <x-incoming-letter-no :incomingNo="$register"/>
 
             <div class="col">
-                <label>སྡེ་ཚན།</label>   
-                <x-section-tree-dropdown id="orgTreeSelectAdd" :orgs="$orgChart" name="section"/>    
+                <label>སྡེ་ཚན།</label>
+                <x-section-tree-dropdown id="orgTreeSelectAdd" :orgs="$orgChart" name="section"/>
             </div>
         </div>
 
@@ -54,7 +54,7 @@
                 @livewire('create-contact',compact('type'))
             </div>
         </div>
-        
+
         <div class="form-row">
             <div class="col d-flex align-items-end">
                 @livewire('attach-media')
@@ -128,14 +128,15 @@
                 </select>
             </div>
         </div>
-        
+
     </div>
-    
+
     <div class="card-footer">
         <div class="float-right">
-            <button type="submit" class="btn btn-primary" name="status" value="sent"><i
+            <button type="submit" class="btn btn-primary" name="status" value="sent" id="submitButton"><i
                     class="far fa-envelope px-1 align-middle"></i>གསོག་འཇོག་བྱོས།</button>
         </div>
     </div>
 
 </form>
+<script src="{{ mix('js/formSubmissionHandler.js') }}"></script>
