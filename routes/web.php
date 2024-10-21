@@ -124,6 +124,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     //Folder Routes
     Route::resource('folders', FolderController::class);
+    Route::post('folder/print/{id}', [FolderController::class, 'print'])->name('folder.print');
+
 
     //Contact
     Route::resource('contact', ContactController::class, [

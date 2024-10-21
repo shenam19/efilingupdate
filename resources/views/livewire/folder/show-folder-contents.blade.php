@@ -3,7 +3,17 @@
         <div class="col p-0 ">
             @if($file)
             <div class="card-header bg-light d-flex justify-content-between">
-                <div class="card-title flex-grow-1">{{ $file['file_no'].' '.$file['name'] }}</div>
+                <div class="card-title flex-grow-1">{{ $file['file_no'].' '.$file['name'] }}
+
+                    <button class="btn btn-default ml-2" data-toggle="modal" data-target="#dateSelect">
+                        <i class="fa fa-print"></i>
+                    </button>
+
+                    <!----- date range picker modal --->
+                    <x-date-range-picker-modal :route="route('folder.print',$file['id'])"
+                        :title="'Select which date to print records'" />
+
+                </div>
                 <div class="card-menu d-flex">
 
                     <button class="btn btn-link text-secondary p-0 mr-2" data-toggle="modal" data-target="#editFile"><i
@@ -138,7 +148,6 @@
     @push('scripts')
     <script>
     Livewire.on('EditFile', (select) => {
-        console.log(select);
         orgTreeSelectEdit.value = select;
     });
     </script>

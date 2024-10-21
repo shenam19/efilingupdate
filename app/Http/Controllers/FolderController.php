@@ -82,4 +82,21 @@ class FolderController extends Controller
 
         return redirect()->route('folders.index')->with('success', 'Folder updated successfully');
     }
+
+    public function print($id, Request $request)
+    {
+
+        $from = $request->input('printDate1') ? Carbon::parse($request->input('printDate1')) : Carbon::today();
+        $to = $request->input('printDate2') ? Carbon::parse($request->input('printDate2'))->addHours('21') : Carbon::today()->addHours('21');
+
+        $folder = Folder::with('records')->find($id);
+
+        $messages = $folder->records()->whereBetween('messages.created_at', [$from, $to])->get();
+
+        $orgs = auth()->user()->hasRole(['admin', 'front desk'])
+            ?   array_merge(array(auth()->user()->works_at), auth()->user()->organization->allChildren()->pluck('id')->toArray())
+            :   array(auth()->user()->works_at);
+        $myOrgs = OrganizationHierarchy::fullOrganization()->pluck('id')->toArray();
+        return view('folder.print', compact('messages', 'orgs', 'myOrgs'));
+    }
 }
