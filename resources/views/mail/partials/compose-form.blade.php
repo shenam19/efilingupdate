@@ -8,9 +8,9 @@
                     </h3>
                 </div>
                 @if ($type === 'compose')
-                    <form method="POST" action="{{ route('send') }}">
+                    <form method="POST" action="{{ route('send') }}" id="recordStoreForm">
                     @else
-                        <form method="POST" action="{{ route('draft.send', $message) }}">
+                        <form method="POST" action="{{ route('draft.send', $message) }}" id="recordStoreForm">
                             @method('PUT')
                 @endif
                 @csrf
@@ -134,7 +134,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="float-right">
-                        <button type="submit" name="status" value="sent" class="btn btn-primary" id="submitButton">
+                        <button type="submit" class="btn btn-primary" id="submitButton">
                             <i class="far fa-envelope align-middle"></i>
                             ཐོངས།
                         </button>
@@ -143,7 +143,7 @@
                         <i class="fas fa-times align-middle"></i>
                         དོར།
                     </button>
-                    <button type="submit" name="status" value="draft" class="btn btn-default">
+                    <button type="submit" class="btn btn-default" id="draftButton">
                         <i class="far fa-file align-middle"></i>
                         ཟིན་བྲིས་གསོག་འཇོག་བྱོས།
                     </button>
@@ -157,24 +157,36 @@
     document.addEventListener("DOMContentLoaded", function() {
         const form = document.getElementById("recordStoreForm");
         const submitButton = document.getElementById("submitButton");
+        const draftButton = document.getElementById("draftButton");
 
 
-        if (form && submitButton) {
+        function disableButton(button) {
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        }
+
+        if (form) {
             form.addEventListener("submit", function(event) {
                 event.preventDefault();
-                const buttonValue = submitButton.value;
-                // Allow the form to submit normally, but disable the button and show loading state
-                submitButton.disabled = true;
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
 
-                // Add the status field programmatically
+                const target = event.submitter;
                 const statusField = document.createElement('input');
                 statusField.type = 'hidden';
                 statusField.name = 'status';
-                statusField.value = 'sent';
-                form.appendChild(statusField);
 
-                // Submit the form
+                if (target === submitButton) {
+
+                    disableButton(submitButton);
+                    statusField.value = 'sent';
+                } else if (target === draftButton) {
+
+                    disableButton(draftButton);
+                    statusField.value = 'draft';
+                } else {
+                    console.log("Unknown button clicked");
+                }
+
+                form.appendChild(statusField);
                 form.submit();
             });
         }
