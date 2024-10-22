@@ -44,6 +44,7 @@ class User extends Authenticatable implements HasMedia, Auditable
         'email',
         'password',
         'intercom',
+        'official_email',
         'works_at',
         'position_id'
     ];

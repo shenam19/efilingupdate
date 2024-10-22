@@ -40,7 +40,6 @@ Route::get('/include-time-in-date', function () {
         $received_date->second = $setDate->second;
         $record->update(['dispatched_date' => $dispatched_date, 'received_date' => $received_date]);
     }
-    dd("done");
 });
 
 Route::get('/', function () {
