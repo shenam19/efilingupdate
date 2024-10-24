@@ -46,13 +46,12 @@
         <div class="flex flex-col justify-around h-full">
           @livewire('register-dropdowns')
         </div>
-          
+
           <!-- /.col -->
           <div class="social-auth-links text-center">
             <button type="submit" class="btn btn-primary btn-block">{{ __('Register') }}</button>
           </div>
           <!-- /.col -->
-        
       </form>
 
       <a href="{{ route('login') }}" class="text-center">{{ __('Already have an account?') }}</a>
