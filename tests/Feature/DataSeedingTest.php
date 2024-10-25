@@ -1,7 +1,6 @@
 <?php
 
 // namespace Tests\Feature;
-
 // use App\Models\Message;
 // use App\Models\MessageType;
 // use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -11,7 +10,6 @@
 // class DataSeedingTest extends TestCase
 // {
 //     use RefreshDatabase;
-
 //     use WithFaker;
 
 //     public function setUp(): void
