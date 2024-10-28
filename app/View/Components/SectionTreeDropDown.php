@@ -4,9 +4,9 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class SectionTreeDropdown extends Component
+class SectionTreeDropDown extends Component
 {
-    
+
     public $orgs;
     public $id;
     public $name;
@@ -16,7 +16,7 @@ class SectionTreeDropdown extends Component
      *
      * @return void
      */
-    public function __construct($id, $orgs, $name, $selected=null)
+    public function __construct($id, $orgs, $name, $selected = null)
     {
         $this->orgs = $orgs;
         $this->id   = $id;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Controllers;
 
 use App\Models\OrganizationHierarchy;
 use App\Models\OrganizationType;
@@ -37,7 +37,7 @@ class OrganizationStructureControllerTest extends TestCase
         $this->assertNotEquals($tsjcUser->works_at, $org->id);
         $this->assertTrue($tsjcUser->can('manage sub organizations'));
 
-        $response = $this->actingAs($tsjcUser)->post(route('organization-structure.add'),[
+        $response = $this->actingAs($tsjcUser)->post(route('organization-structure.add'), [
             'name_short' => 'Tsjc user',
             'name' => 'Tsjc user',
             'id' => $org->id,
@@ -74,7 +74,7 @@ class OrganizationStructureControllerTest extends TestCase
 
         $subOrg = OrganizationHierarchy::where('name', 'Organization Under Kashag')->first();
 
-        $reponse1 = $this->actingAs($kashagUser)->post('organization-structure/add',[
+        $reponse1 = $this->actingAs($kashagUser)->post('organization-structure/add', [
             'name_short' => 'Sub Org und resp',
             'name' => 'Sub Organization Under Response',
             'id' => $subOrg->id
@@ -106,7 +106,7 @@ class OrganizationStructureControllerTest extends TestCase
 
         $this->assertNotNull($createdOrg);
 
-        $response = $this->actingAs($tsjcUser)->post('organization-structure/edit',[
+        $response = $this->actingAs($tsjcUser)->post('organization-structure/edit', [
             'id' => $createdOrg->id,
             'name' => 'Tsjc Org',
             'name_short' => 'Tsjc Org',
@@ -114,7 +114,7 @@ class OrganizationStructureControllerTest extends TestCase
 
         $response->assertStatus(403);
 
-        $this->assertDatabaseMissing('organization_hierarchies',[
+        $this->assertDatabaseMissing('organization_hierarchies', [
             'id' => $createdOrg->id,
             'name' => 'Tsjc Org',
             'name_short' => 'Tsjc Org',
@@ -140,7 +140,7 @@ class OrganizationStructureControllerTest extends TestCase
 
         $this->assertNotNull($createdOrg);
 
-        $response = $this->actingAs($KashagUser)->post('organization-structure/add',[
+        $response = $this->actingAs($KashagUser)->post('organization-structure/add', [
             'name_short' => 'Sub Org und resp',
             'name' => 'Sub Organization Under Response',
             'id' => $createdOrg->id
@@ -150,7 +150,7 @@ class OrganizationStructureControllerTest extends TestCase
 
         $this->assertNotNull($editOrg);
 
-        $this->actingAs($KashagUser)->post('organization-structure/edit',[
+        $this->actingAs($KashagUser)->post('organization-structure/edit', [
             'id' => $editOrg->id,
             'name' => 'Kashag Changed from WED',
             'name_short' => 'Kashag Organization',
@@ -171,7 +171,7 @@ class OrganizationStructureControllerTest extends TestCase
         $this->assertEquals($kashagOrg->id, $kashagUser->works_at);
         $this->assertTrue($kashagUser->can('manage sub organizations'));
 
-        $this->actingAs($kashagUser)->post('organization-structure/add',[
+        $this->actingAs($kashagUser)->post('organization-structure/add', [
             'name' => 'kashag-organization',
             'name_short' => 'Kashag-org',
             'id' => $kashagOrg->id,
@@ -205,7 +205,7 @@ class OrganizationStructureControllerTest extends TestCase
         $this->assertNotEquals($KashagOrg->id, $tsjcUser->works_at);
         $this->assertTrue($tsjcUser->can('manage sub organizations'));
 
-        $this->actingAs($kashagUser)->post('organization-structure/add',[
+        $this->actingAs($kashagUser)->post('organization-structure/add', [
             'name' => 'Kashag - Section ABC',
             'name_short' => 'kashag-section-abc',
             'id' => $KashagOrg->id,

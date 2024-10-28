@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Controllers;
 
 use App\Models\OrganizationHierarchy;
 use App\Models\OrganizationType;
@@ -18,7 +18,7 @@ class UserControllerTest extends TestCase
      * @return void
      */
 
-    public function setUp():void
+    public function setUp(): void
     {
         parent::setUp();
         $this->seed();
@@ -26,11 +26,11 @@ class UserControllerTest extends TestCase
     public function test_adding_users()
     {
         $works_at = OrganizationHierarchy::where('name', 'Tibetan Supreme Justice Commission')->first();
-        $position = Position::findOrFail(rand(1,14));
+        $position = Position::findOrFail(rand(1, 14));
 
         $user = User::where('name', 'Front Desk of Kashag')->firstOrFail();
 
-        $response = $this->actingAs($user)->post(route('manage-staff.store'),[
+        $response = $this->actingAs($user)->post(route('manage-staff.store'), [
             'name' => 'Test Staff',
             'email' => 'Test@tibet.net',
             'password' => 'password',
@@ -44,7 +44,7 @@ class UserControllerTest extends TestCase
         $response->assertStatus(302);
 
         // $response->assertSessionHasNoErrors();
-        $this->assertDatabaseHas('users',[
+        $this->assertDatabaseHas('users', [
             'name' => 'Test Staff',
             'email' => 'Test@tibet.net',
             'works_at' => $works_at->id,

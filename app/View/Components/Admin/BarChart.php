@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Admin;
 
 use Illuminate\View\Component;
 
@@ -9,7 +9,7 @@ class BarChart extends Component
     public $labels;
     public $chartData;
 
-    public function __construct($labels,$chartData)
+    public function __construct($labels, $chartData)
     {
         $this->labels = $labels;
         $this->chartData = $chartData;

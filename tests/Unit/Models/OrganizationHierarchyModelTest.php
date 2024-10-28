@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Models;
 
 use App\Models\OrganizationHierarchy;
 use App\Models\OrganizationType;
@@ -20,14 +20,15 @@ class OrganizationHierarchyModelTest extends TestCase
      * @return void
      */
 
-    public function setUp():void
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->seed();
     }
 
-    public function test_should_return_null_when_parent_org_is_not_set(){
+    public function test_should_return_null_when_parent_org_is_not_set()
+    {
         $govType = OrganizationType::where('name_short', 'gov')->first();
         $org = new OrganizationHierarchy();
         $org->name_short = 'TPiE';
@@ -36,7 +37,8 @@ class OrganizationHierarchyModelTest extends TestCase
         $this->assertEquals($org->parent, null);
     }
 
-    public function test_should_return_parent_org_when_parent_org_is_set(): void {
+    public function test_should_return_parent_org_when_parent_org_is_set(): void
+    {
         $govType = OrganizationType::where('name', 'Government')->first();
 
         $parliament = new OrganizationHierarchy();
@@ -54,10 +56,10 @@ class OrganizationHierarchyModelTest extends TestCase
         $this->assertEquals($tpie->parent->id, $parliament->id);
     }
 
-    public function test_to_check_whether_the_user_works_at_particular_organziation_hierachy() {
-        $user = User::where('name','Head of TCRC')->first();
+    public function test_to_check_whether_the_user_works_at_particular_organziation_hierachy()
+    {
+        $user = User::where('name', 'Head of TCRC')->first();
         $org = OrganizationHierarchy::where('name_short', 'TCRC')->first();
-        $this->assertEquals($user->works_at, $org->id );
+        $this->assertEquals($user->works_at, $org->id);
     }
-
 }

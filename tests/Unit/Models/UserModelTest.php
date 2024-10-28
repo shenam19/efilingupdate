@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Models;
 
 use App\Models\Position;
 use App\Models\User;
@@ -21,19 +21,21 @@ class UserModelTest extends TestCase
      * @return void
      */
 
-    public function setUp():void
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->seed();
     }
 
-    public function test_to_check_whether_the_particular_user_is_receptionist_or_not() {
+    public function test_to_check_whether_the_particular_user_is_receptionist_or_not()
+    {
         $user = User::where('name', 'Front Desk of Kashag')->first();
         $this->assertTrue($user->hasRole('front desk'));
     }
 
-    public function test_position_matches() {
+    public function test_position_matches()
+    {
         $user = new User();
         $position = Position::where('name_tibetan', 'རྒན་དྲུང་།')->first();
         $user->name = 'Front Desk Data Section';
@@ -44,6 +46,5 @@ class UserModelTest extends TestCase
         $user->save();
 
         $this->assertEquals($position->id, $user->position_id);
-
     }
 }
