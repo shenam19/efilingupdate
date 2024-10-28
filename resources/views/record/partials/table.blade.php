@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{asset('css/message-table.css')}}">
 @endpush
 <table class="table table-inbox">
-     <thead class="thead-light">
+    <thead class="thead-light">
         <th></th>
         <th class="text-center">#</th>
         <th>{{$type ==='incoming' ? 'གཏོང་མཁན།': 'གཏོང་ཡུལ།'}}</th>
@@ -15,29 +15,30 @@
     <tbody>
         @forelse($messages as $message)
         <tr class="{{ $message->isUnread() ? 'unread font-weight-bold': '' }}{{ isset($message->prevPullBack) ? 'pullback_msg' : ''}}"
-        onclick="location.href='{{ route('record.show',['type' => $type, 'message' => $message])}}'">
+            onclick="location.href='{{ route('record.show',['type' => $type, 'message' => $message])}}'">
             <td class="inbox-small-cells checkbox-cell">
-                <input type="checkbox" class="mail-checkbox" wire:model="selected" value="{{$message->id}}">
+                <input type="checkbox" class="mail-checkbox" wire:model="selected" value="{{$message->id}}"
+                    onclick="event.stopPropagation();">
             </td>
             <td class="redirect text-center">
                 @if($type === 'incoming')
-                    {{$message->getIncomingNo($myOrgs)}}
+                {{$message->getIncomingNo($myOrgs)}}
                 @else
-                    {{$message->record->outgoing_no}}
+                {{$message->record->outgoing_no}}
                 @endif
             </td>
             <td class="redirect" style="line-height: 1">
                 @if($type ==='incoming')
-                    {{$message->getSenderName()}}
-                    @if($message->is_user)
-                    <small class="d-block text-secondary">{{$message->sender->organization->getRoot()->name_short}}</small>
-                    @endif
+                {{$message->getSenderName()}}
+                @if($message->is_user)
+                <small class="d-block text-secondary">{{$message->sender->organization->getRoot()->name_short}}</small>
+                @endif
                 @else
-                    {{$message->getRecipientsNames()}}
+                {{$message->getRecipientsNames()}}
                 @endif
             </td>
             <td class="redirect">
-                <x-urgency :value="$message->urgency"/>
+                <x-urgency :value="$message->urgency" />
             </td>
 
             <td class="redirect ">
@@ -60,7 +61,8 @@
 
             <td class="inbox-small-cells action-btn">
                 @if($message->isEditable($myOrgs))
-                <a class="text-secondary small" href="{{ route('record.edit',['type' => $type, 'message' => $message])}}">
+                <a class="text-secondary small"
+                    href="{{ route('record.edit',['type' => $type, 'message' => $message])}}">
                     <i class="fas fa-pen"></i>
                 </a>
                 @endif
@@ -69,10 +71,9 @@
         @empty
         <tr>
             <td colspan="7" class="text-center text-primary">
-            ཡིག་ཁུག་སྟོང་པ་རེད་འདུག
+                ཡིག་ཁུག་སྟོང་པ་རེད་འདུག
             </td>
         </tr>
         @endforelse
     </tbody>
 </table>
-
