@@ -1,13 +1,13 @@
 <div>
     <div class="btn-group">
-        <button type="button" class="btn btn-default btn-sm" data-container="body" title="Pull Back"
-                data-placement="bottom" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-default btn-sm" data-container="body" title="Pull Back" data-placement="bottom"
+            data-toggle="modal" data-target="#exampleModal">
             <i class="fas fa-undo align-middle"></i>
         </button>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -25,8 +25,9 @@
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Please give reason for pulling back this
                                 message:</label>
-                            <textarea class="form-control" id="message-text" required
-                                      wire:model.defer="reason"></textarea>
+                            <textarea class="form-control" id="message-text" required wire:model="reason"></textarea>
+                            {{-- <textarea class="form-control" id="message-text" required
+                                      wire:model.defer="reason"></textarea> --}}
                         </div>
                     </div>
                     <div class="modal-footer">

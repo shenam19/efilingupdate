@@ -1,12 +1,12 @@
-<form method="POST" action="{{route('record.store',$type)}}" enctype='multipart/form-data' id="recordStoreForm">
+<form method="POST" action="{{ route('record.store', $type) }}" enctype='multipart/form-data' id="recordStoreForm">
     @csrf
     <div class="card-body">
         <div class="form-row">
-            <x-incoming-letter-no :incomingNo="$register"/>
+            <x-incoming-letter-no :incomingNo="$register" />
 
             <div class="col">
                 <label>སྡེ་ཚན།</label>
-                <x-section-tree-dropdown id="orgTreeSelectAdd" :orgs="$orgChart" name="section"/>
+                <x-section-tree-dropdown id="orgTreeSelectAdd" :orgs="$orgChart" name="section" />
             </div>
         </div>
 
@@ -14,8 +14,8 @@
             <div class="col">
                 <label for="message_type_dd">ཡི་གེའི་དབྱེ་བ།</label>
                 <select id="message_type_dd" name="message_type_id" class="form-control">
-                    @foreach($messageTypes as $mType)
-                    <option value={{ $mType->id }}>{{ $mType->name_tibetan }}</option>
+                    @foreach ($messageTypes as $mType)
+                        <option value={{ $mType->id }}>{{ $mType->name_tibetan }}</option>
                     @endforeach
                 </select>
             </div>
@@ -27,9 +27,9 @@
                         value="{{ old('record[dispatched_date]') }}">
                 </div>
                 @error('record.dispatched_date')
-                <div class="text-danger font-italic" style="font-size:0.8rem">
-                    *{{ $message }}
-                </div>
+                    <div class="text-danger font-italic" style="font-size:0.8rem">
+                        *{{ $message }}
+                    </div>
                 @enderror
             </div>
 
@@ -38,20 +38,21 @@
                 <div class="input-group date">
                     <input type="datetime-local"
                         class="form-control @error('record.received_date')  is-invalid @enderror"
-                        name="record[received_date]" value="{{ old('record.received_date',Carbon\Carbon::now()) }}"
+                        name="record[received_date]" value="{{ old('record.received_date', Carbon\Carbon::now()) }}"
                         required>
 
                 </div>
                 @error('record.received_date')
-                <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}
-                </div>
+                    <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}
+                    </div>
                 @enderror
             </div>
         </div>
 
         <div class="form-row mt-3">
             <div class="col">
-                @livewire('create-contact',compact('type'))
+                @livewire('create-contact', compact('type'))
+
             </div>
         </div>
 
@@ -77,11 +78,10 @@
                 <div class="form-group">
                     <label>ནང་དོན།</label><span class="text-danger">*</span>
                     <input type="text" class="form-control @error('subject') is-invalid @enderror"
-                        placeholder="འདིར་འབྲི་རོགས།" name="subject" value="{{ old('subject') }}"
-                        required>
+                        placeholder="འདིར་འབྲི་རོགས།" name="subject" value="{{ old('subject') }}" required>
                     @error('subject')
-                    <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}
-                    </div>
+                        <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}
+                        </div>
                     @enderror
                 </div>
             </div>
@@ -91,8 +91,7 @@
             <div class="col-12">
                 <div class="form-group">
                     <label>ཟུར་མཆན།</label>
-                    <textarea class="form-control" rows="3" placeholder="འདིར་འབྲི་རོགས།"
-                        name="remarks">{{ old('remarks') }}</textarea>
+                    <textarea class="form-control" rows="3" placeholder="འདིར་འབྲི་རོགས།" name="remarks">{{ old('remarks') }}</textarea>
                 </div>
             </div>
         </div>
@@ -101,7 +100,7 @@
 
             <div class="col-4">
                 <label>ཡིག་ཁུག</label>
-                <x-dropdown :option="$fileTree" name="folder[]" id="fileSelect" :multiple="true" placeholder="འདེམས།"/>
+                <x-dropdown :option="$fileTree" name="folder[]" id="fileSelect" :multiple="true" placeholder="འདེམས།" />
             </div>
 
             <div class="col-4">
@@ -114,8 +113,8 @@
                     <option>དེབ་སྐྱེལ་སྦྲག་ཡིག/Register post</option>
                     <option>ཀོོ་རི་ཡར།/Courier</option>
                     <option>ཕེགས་/Fax</option>
-		    <option>གཞན།</option>
-		</select>
+                    <option>གཞན།</option>
+                </select>
             </div>
 
             <div class="col-4">

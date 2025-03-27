@@ -1,17 +1,17 @@
-<div id="{{$id}}">
-    <treeselect v-model="value" :multiple="false" :options="options" name="{{$name}}"/>
+<div id="{{ $id }}">
+    <treeselect v-model="value" :multiple="false" :options="options" name="{{ $name }}" />
 </div>
 
 @push('scripts')
     <script>
         Vue.component('treeselect', VueTreeselect.Treeselect);
-        let {{$id}} = new Vue({
-            el: '#{{$id}}',
+        let {{ $id }} = new Vue({
+            el: '#{{ $id }}',
             data: {
                 // define the default value
-                value:  {{$selected ?? 'null'}} ,
+                value: {{ $selected ?? 'null' }},
                 // define options
-                options: {!!$orgs!!},
+                options: {!! $orgs !!},
             },
         });
     </script>

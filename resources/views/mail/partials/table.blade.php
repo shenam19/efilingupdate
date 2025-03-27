@@ -4,11 +4,12 @@
 <table class="table table-inbox">
     <tbody>
         @forelse($messages as $message)
-            <tr class="{{ $message->isUnread() ? 'unread font-weight-bold' : '' }} {{ isset($message->prevPullBack) ? 'pullback_msg' : '' }}"
+            <tr wire:key="message-{{ $message->id }}"
+                class="{{ $message->isUnread() ? 'unread font-weight-bold' : '' }} {{ isset($message->prevPullBack) ? 'pullback_msg' : '' }}"
                 style="cursor: pointer;"
                 onclick="location.href='{{ $type === 'draft' ? route('draft.show', $message->uuid) : route('show', $message->uuid) }}'">
                 <td class="inbox-small-cells checkbox-cell">
-                    <input type="checkbox" class="mail-checkbox" wire:model="selected"
+                    <input type="checkbox" class="mail-checkbox" wire:model.live="selected"
                         value="{{ $message->forward_id ? $message->getOriginalMessage()->id : $message->id }}"
                         onclick="event.stopPropagation();">
                 </td>

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Message;
+use Livewire\Attributes\On;
 use Spatie\MediaLibrary\MediaCollections\Models\Media as BaseMedia;
 
 class AttachMedia extends Component
@@ -12,7 +13,7 @@ class AttachMedia extends Component
     public $user;
     public $selected_media = array();
     public $attachments = [];
-    protected $listeners = ['setSelectedMedia'];
+    // protected $listeners = ['setSelectedMedia'];
 
     public function mount(Message $message = null)
     {
@@ -23,15 +24,26 @@ class AttachMedia extends Component
         }
     }
 
-    public function setSelectedMedia($arr)
+    // public function setSelectedMedia($arr)
+    // {
+    //     is_array($arr) ? $this->selected_media = array_merge($this->selected_media, $arr) : $this->selected_media[] = $arr;
+    // }
+    #[On('setSelectedMedia')]
+    public function setSelectedMedia($arr = [])
     {
-        is_array($arr) ? $this->selected_media = array_merge($this->selected_media, $arr) : $this->selected_media[] = $arr;
+        if (!is_array($arr)) {
+            $arr = [$arr];
+        }
+
+        $this->selected_media = array_unique(array_merge($this->selected_media, $arr));
     }
 
     public function attach()
     {
         $this->attachments = $this->user->getAllMedia()->whereIn('id', $this->selected_media);
-        $this->emitUp('setAttachments', $this->selected_media);
+        // $this->emitUp('setAttachments', $this->selected_media);
+
+        // $this->dispatch('setAttachments', $this->selected_media);
     }
 
     public function removeMedia($id)
