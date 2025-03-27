@@ -2,29 +2,17 @@
     <div class="row mb-3">
         <div class="col-8">
             <div class="form-group">
-                <label>{{$type === 'incoming' ? 'གཏོང་མཁན།' : 'ཕྱི་ལ་གཏོང་ཡུལ།'}}</label><span class="text-danger">*</span>
-                @if($type === 'incoming')
-                    <x-dropdown 
-                        :option="$contactsTree" 
-                        name="recipients" 
-                        id="contactSelect" 
-                        :multiple="false" 
-                        :multiSelect="0"
-                        placeholder="འདེམས།"                        
-                        :selected=$selected
-                    /> 
+                <label>{{ $type === 'incoming' ? 'གཏོང་མཁན།' : 'ཕྱི་ལ་གཏོང་ཡུལ།' }}</label><span
+                    class="text-danger">*</span>
+                @if ($type === 'incoming')
+                    <x-dropdown wire:ignore :option="$contactsTree" name="recipients" id="contactSelect" :multiple="false"
+                        :multiSelect="0" placeholder="འདེམས།" />
                 @else
-                    <x-dropdown 
-                        :option="$contactsTree" 
-                        name="recipients[]" 
-                        id="contactSelect" 
-                        :multiple="true" 
-                        placeholder="འདེམས།"
-                        :selected=$selected
-                    /> 
+                    <x-dropdown wire:ignore :option="$contactsTree" name="recipients[]" id="contactSelect" :multiple="true"
+                        placeholder="འདེམས།" />
                 @endif
                 @error('recipients')
-                <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
+                    <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
                 @enderror
             </div>
         </div>
@@ -57,7 +45,7 @@
                                 </div>
                             </div>
                             @error('contact.name')
-                            <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
+                                <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-6">
@@ -68,7 +56,7 @@
                                 </div>
                             </div>
                             @error('contact.email')
-                            <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
+                                <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
@@ -81,21 +69,15 @@
                                 </div>
                             </div>
                             @error('contact.phone')
-                            <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
+                                <div class="text-danger font-italic" style="font-size:0.8rem">*{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label>ཚོགས་སྡེ་གང་གི་ཁུངས།</label>                                
-                                <x-dropdown 
-                                    :option="$contactsTree" 
-                                    id="groupSelect" 
-                                    :multiple="false" 
-                                    placeholder="འདེམས།" 
-                                    :multiSelect="0"
-                                    v-on:select="setParentContact"
-                                    v-on:deselect="removeParentContact"
-                                />
+                                <label>ཚོགས་སྡེ་གང་གི་ཁུངས།</label>
+                                <x-dropdown :option="$contactsTree" id="groupSelect" :multiple="false" placeholder="འདེམས།"
+                                    :multiSelect="0" v-on:select="setParentContact"
+                                    v-on:deselect="removeParentContact" />
                             </div>
                         </div>
                     </div>
@@ -113,30 +95,35 @@
                     <button type="button" class="btn btn-primary" data-dismiss="modal"
                         wire:click="createContact">གསོག་འཇོག</button>
                 </div>
+
             </div>
         </div>
 
     </div>
 
     @push('scripts')
-    <script>
-        Livewire.on('addedUser',(options, select) => {
-            contactSelect.options = options;
-            groupSelect.options = options;
-            groupSelect.value = null;
-            const recipients = new Set(contactSelect.value);
+        <script>
+            Livewire.on('addedUser', (options, select) => {
 
-            @if($type === 'incoming')
-                contactSelect.value = null;
-                contactSelect.value = select.id;
-                console.log(contactSelect.value);
-            @else
-                recipients.add(select.id);
-                contactSelect.value = Array.from(recipients);
-                //contactSelect.value = Arraypush(select.id);
-                console.log(contactSelect.value);
-            @endif
-        });
-    </script>
+                contactSelect.options = options;
+                groupSelect.options = options;
+                groupSelect.value = null;
+                const recipients = new Set(contactSelect.value);
+                console.log(recipients);
+
+                @if ($type === 'incoming')
+                    contactSelect.value = null;
+                    contactSelect.value = select.id;
+                    console.log(contactSelect.value);
+                @else
+                    recipients.add(select.id);
+                    contactSelect.value = Array.from(recipients);
+                    //contactSelect.value = Arraypush(select.id);
+                    console.log(contactSelect.value);
+                @endif
+            });
+        </script>
     @endpush
+
+
 </div>

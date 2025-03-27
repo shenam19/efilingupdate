@@ -87,7 +87,7 @@ class FolderController extends Controller
     {
 
         $from = $request->input('printDate1') ? Carbon::parse($request->input('printDate1')) : Carbon::today();
-        $to = $request->input('printDate2') ? Carbon::parse($request->input('printDate2'))->addHours('21') : Carbon::today()->addHours('21');
+        $to = $request->input('printDate2') ? Carbon::parse($request->input('printDate2'))->addHours(21) : Carbon::today()->addHours(21);
 
         $folder = Folder::with('records')->find($id);
 

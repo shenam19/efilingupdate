@@ -31,7 +31,7 @@ class Logins extends Component
     public function updatedTimeline($value)
     {
         $this->reset('data');
-        
+
         $this->labels = match ($value) {
             'today','yesterday' =>  array('8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm','4pm','5pm'),
             'this week' => array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
@@ -48,11 +48,11 @@ class Logins extends Component
                 ->whereBetween('created_at',[$from,$to])
                 ->count();
         }
-        $this->dispatchBrowserEvent('reloadChart',['labels' => $this->labels,'data'=>$this->data]);
+        $this->dispatch('reloadChart',['labels' => $this->labels,'data'=>$this->data]);
     }
 
     public function render()
-    {   
+    {
         return view('livewire.admin.logins');
     }
 }

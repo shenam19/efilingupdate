@@ -7,6 +7,7 @@ use Livewire\WithPagination;
 use App\Models\Message;
 use App\Models\OrganizationHierarchy;
 use App\Models\Folder;
+use Livewire\Attributes\On;
 
 class MessageTable extends Component
 {
@@ -16,33 +17,41 @@ class MessageTable extends Component
     public $selected = [];
     public $type;
 
-    protected $listeners = ['addedToFolder' => 'resetSelected'];
+    // protected $listeners = ['addedToFolder' => 'resetSelected'];
 
     public function updatedSelected()
     {
-        $this->emitTo('add-to-folder','selectedMessage',$this->selected);
+        // $this->emitTo('add-to-folder','selectedMessage',$this->selected);
+        // $this->dispatchTo('add-to-folder', 'selectedMessage', $this->selected);
+        // $this->dispatch('selectedMessage', $this->selected)->to('add-to-folder');
+        // $this->dispatch('selectedMessage', selected: $this->selected)->to('add-to-folder');
+        $this->dispatch('selectedMessage', ['selected' => $this->selected])->to('add-to-folder');
     }
 
+
+
+    #[On('addedToFolder')]
     public function resetSelected()
     {
         $this->reset('selected');
     }
 
     public function render()
-    {   
+    {
         $query = match ($this->type) {
             'inbox' => Message::forUser(),
             'sent' => Message::sentByUser(),
             'draft' => Message::myDraft(),
         };
-        
-        $messages = $query->whereLike(['subject','remarks','sender.name','contactSender.name'],$this->search ?? '')
-        ->with(['type','sender','prevPullBack','recipients.user','contactSender'])      
-        ->withCount('attachments')        
-        ->paginate(15);
+
+
+        $messages = $query->whereLike(['subject', 'remarks', 'sender.name', 'contactSender.name'], $this->search ?? '')
+            ->with(['type', 'sender', 'prevPullBack', 'recipients.user', 'contactSender'])
+            ->withCount('attachments')
+            ->paginate(15);
 
         $orgs = OrganizationHierarchy::fullOrganization()->pluck('id')->toArray();
-        $orgsFolder = Folder::whereIn('organization_id',$orgs)->pluck('id')->toArray();
-        return view('livewire.message-table',compact('messages','orgs','orgsFolder'));
+        $orgsFolder = Folder::whereIn('organization_id', $orgs)->pluck('id')->toArray();
+        return view('livewire.message-table', compact('messages', 'orgs', 'orgsFolder'));
     }
 }

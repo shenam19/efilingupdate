@@ -10,6 +10,7 @@ use App\Models\MessageType;
 use Illuminate\Database\Eloquent\Collection;
 use Carbon\Carbon;
 use App\Models\Folder;
+use Livewire\Attributes\On;
 
 class RecordTable extends Component
 {
@@ -25,7 +26,7 @@ class RecordTable extends Component
     public $selected = [];
     public $date1, $date2, $showAccess;
 
-    protected $listeners = ['setData', 'addedToFolder' => 'resetSelected'];
+    // protected $listeners = ['setData', 'addedToFolder' => 'resetSelected'];
 
     public function mount($type)
     {
@@ -37,19 +38,24 @@ class RecordTable extends Component
 
     public function updatedSelected()
     {
-        $this->emitTo('add-to-folder', 'selectedMessage', $this->selected);
+        // $this->emitTo('add-to-folder', 'selectedMessage', $this->selected);
+        $this->dispatch('selectedMessage', $this->selected)->to('add-to-folder');
+        // $this->dispatchTo('add-to-folder', 'selectedMessage', $this->selected);
     }
-
+    #[On('addedToFolder')]
     public function resetSelected()
     {
         $this->reset('selected');
     }
-
-    public function setData($data)
+    #[On('setData')]
+    public function setData($data = [])
     {
+        $data = is_array($data) ? $data : [$data];
+
         $this->type === 'incoming'
             ? $this->senders    = $data
             : $this->recipients = $data;
+
         $this->resetPage();
     }
 
@@ -92,6 +98,7 @@ class RecordTable extends Component
                 return $query->where('urgency', $this->urgency);
             })
             ->when(!empty($this->recipients), function ($query) {
+
                 return $query->whereHas('recipients', function ($q) {
                     return $q->where(function ($qq) {
                         $qq->whereIn('user_id', $this->recipients)
@@ -144,6 +151,7 @@ class RecordTable extends Component
                 $contacts[] = $msg->is_user ? $msg->sender : $msg->contactSender;
             }
         } else {
+
             $outgoingMessages  = Message::with('recipients.user', 'recipients.contact')
                 ->whereIn('organization_id', $myOrgs)
                 ->whereHas('recipients', function ($query) use ($myOrgs) {
@@ -153,8 +161,10 @@ class RecordTable extends Component
                 ->distinct()
                 ->get();
 
+
             foreach ($outgoingMessages as $msg) {
                 $recipients = $msg->recipients;
+
                 foreach ($recipients as $recipient) {
                     $contacts[] = $recipient->is_user ? $recipient->user : $recipient->contact;
                 }
