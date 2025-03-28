@@ -103,7 +103,12 @@
 
     @push('scripts')
         <script>
-            Livewire.on('addedUser', (options, select) => {
+            // Livewire.on('addedUser', (options, select) => {
+            Livewire.on('addedUser', (data) => {
+                const {
+                    contactsTree: options,
+                    newContact: select
+                } = data;
 
                 contactSelect.options = options;
                 groupSelect.options = options;

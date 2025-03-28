@@ -12,11 +12,16 @@ class CreateContact extends Component
     public $contact = [];
     public $type;
     public $selected;
+    public $contactsTree = [];
 
     public function mount($type = null, $selected = null)
     {
         $this->type = $type;
         $this->selected = $selected;
+        $this->contactsTree = Contact::select('id', 'name as label')
+            ->where('org_id', auth()->user()->organization->getRoot()->id)
+            ->orWhereNull('org_id')
+            ->get();
         \Log::info('Mounting CreateContact', ['type' => $type, 'selected' => $selected]);
     }
 
@@ -68,9 +73,57 @@ class CreateContact extends Component
         $this->dispatch('addedUser', contactsTree: $contactsTree, newContact: $newContact);
     }
 
+    // public function createContact()
+    // {
+    //     $validator = Validator::make($this->contact, [
+    //         'name'  => ['required', 'string', 'max:125'],
+    //         'email' => ['email', 'max:125'],
+    //         'phone' => ['max:15'],
+    //         'parent_id' => ['sometimes', 'nullable', 'exists:contacts,id'],
+    //         'address' => ['max:200']
+    //     ]);
+
+    //     if ($validator->fails()) {
+    //         $errors = $validator->errors();
+    //         $errorMessages = implode(', ', $errors->all());
+    //         $this->dispatch('error', $errorMessages);
+    //         return;
+    //     }
+
+    //     $this->contact['org_id'] = auth()->user()->organization->getRoot()->id;
+    //     $newContact = Contact::create($this->contact);
+    //     $this->reset('contact');
+
+    //     $contactsTree = Contact::select('id', 'name as label')
+    //         ->where('org_id', auth()->user()->organization->getRoot()->id)
+    //         ->orWhereNull('org_id')
+    //         ->get();
+
+    //     \Log::info('Contact created', [
+    //         'tree' => $contactsTree->toArray(),
+    //         'new' => $newContact->toArray()
+    //     ]);
+
+    //     // Dispatch the event to notify that an organization/contact has been added
+    //     $this->dispatch('organizationAdded');
+
+    //     // Dispatch event to update UI
+    //     $this->dispatch('addedUser', contactsTree: $contactsTree, newContact: $newContact);
+    // }
+
+
     public function render()
     {
         $contactsTree = Contact::getContactTree();
         return view('livewire.create-contact', compact('contactsTree'));
+    }
+
+    #[On('organizationAdded')]
+    public function updateContactsTree()
+    {
+        $this->contactsTree = Contact::select('id', 'name as label')
+            ->where('org_id', auth()->user()->organization->getRoot()->id)
+            ->orWhereNull('org_id')
+            ->get();
     }
 }
