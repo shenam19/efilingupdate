@@ -1,13 +1,14 @@
-<div id="{{ $id }}">
-
+<div id="{{ $id }}" wire:ignore>
     <treeselect {{ $attributes }} v-model="value" :options="options" :flat="true"
         :flatten-search-results="true" :clearOnSelect="true" />
-
 </div>
+
 @push('scripts')
     <script>
         // register the component
-        Vue.component('treeselect', VueTreeselect.Treeselect);
+        // document.addEventListener('livewire:load', () => {
+            Vue.component('treeselect', VueTreeselect.Treeselect);
+        // })
         let {{ $id }} = new Vue({
             el: '#{{ $id }}',
             data: {
@@ -56,12 +57,6 @@
                     Livewire.dispatchTo('forward-message', 'setRecipients', {
                         id: [node.id]
                     });
-
-
-
-
-
-
                 },
                 removeRecipient: function(node, instanceId) {
                     // Livewire.emitTo('forward-message', 'removeRecipient', node.id);
@@ -69,13 +64,10 @@
                     Livewire.dispatchTo('forward-message', 'removeRecipient', {
                         id: [node.id]
                     });
-
                 },
                 setParentContact: function(node, instanceId) {
                     // Livewire.emitTo('create-contact', 'setParentContact', node.id);
-                    Livewire.dispatchTo('create-contact', 'setParentContact', {
-                        id: [node.id]
-                    });
+                    Livewire.dispatchTo('create-contact', 'setParentContact',[node.id]);
                 },
                 removeParentContact: function(node, instanceId) {
                     // Livewire.emitTo('create-contact', 'removeParentContact', node.id);
@@ -99,8 +91,6 @@
 
                     Livewire.dispatch('setData', cleanNode);
                 },
-
-
                 selectData: function(node, instanceId) {
                     Livewire.dispatch('selectData', {
                         selected: [node.id]
@@ -120,11 +110,6 @@
                         contact: [node.id]
                     });
                     // $this - > dispatch('selectionChange', id: $node - > id) - > to('show-contact-card');
-
-
-
-
-
                 }
             }
         });

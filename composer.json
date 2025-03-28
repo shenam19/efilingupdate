@@ -8,7 +8,6 @@
         "php": "^8.2",
         "ext-json": "*",
         "enyo/dropzone": "^5.9",
-
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^11.0",
         "laravel/jetstream": "^5.0",
@@ -17,7 +16,7 @@
         "livewire/livewire": "^3.4",
         "owen-it/laravel-auditing": "^13.0",
         "spatie/laravel-medialibrary": "^11.0",
-        "spatie/laravel-permission": "^6.0",
+        "spatie/laravel-permission": "^6.16",
         "spatie/pdf-to-image": "^1.2"
     },
     "require-dev": {

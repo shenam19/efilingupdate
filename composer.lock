@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25d713b3d65c49ffea55181f9ad6e763",
+    "content-hash": "c167a12ae4fad6c06b4e83bcf699f922",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4564,24 +4564,24 @@
         },
         {
             "name": "spatie/pdf-to-image",
-            "version": "1.4.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/pdf-to-image.git",
-                "reference": "8deb3d899ecbef7e8e1dad16e3e7b57997582abc"
+                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/8deb3d899ecbef7e8e1dad16e3e7b57997582abc",
-                "reference": "8deb3d899ecbef7e8e1dad16e3e7b57997582abc",
+                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/9a5cb264a99e87e010c65d4ece03b51f821d55bd",
+                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd",
                 "shasum": ""
             },
             "require": {
-                "ext-imagick": "*",
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.2"
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
             },
             "type": "library",
             "autoload": {
@@ -4612,7 +4612,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/pdf-to-image/issues",
-                "source": "https://github.com/spatie/pdf-to-image/tree/1.4.0"
+                "source": "https://github.com/spatie/pdf-to-image/tree/1.2.2"
             },
             "funding": [
                 {
@@ -4620,7 +4620,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2017-06-15T18:15:09+00:00"
+            "time": "2016-12-14T15:37:00+00:00"
         },
         {
             "name": "spatie/temporary-directory",
