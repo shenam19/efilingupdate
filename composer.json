@@ -9,12 +9,12 @@
         "ext-json": "*",
         "enyo/dropzone": "^5.9",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^11.0",
+        "laravel/framework": "^12.0",
         "laravel/jetstream": "^5.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^3.4",
-        "owen-it/laravel-auditing": "^13.0",
+        "owen-it/laravel-auditing": "^14.0",
         "spatie/laravel-medialibrary": "^11.0",
         "spatie/laravel-permission": "^6.16",
         "spatie/pdf-to-image": "^1.2"
@@ -26,7 +26,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^8.1",
-        "phpunit/phpunit": "^10.0"
+        "phpunit/phpunit": "^11.0"
     },
     "autoload": {
         "psr-4": {
