@@ -1,66 +1,22 @@
-version: 0.2
+# Copy environment file
+cp .env.example .env
 
-phases:
-  install:
-    runtime-versions:
-      php: 8.1
-    commands:
-      - echo "Installing system dependencies..."
-      
-  pre_build:
-    commands:
-      - echo "Pre-build phase started on `date`"
-      - echo "Creating Laravel required directories..."
-      - mkdir -p storage/framework/cache/data
-      - mkdir -p storage/framework/sessions
-      - mkdir -p storage/framework/views
-      - mkdir -p storage/logs
-      - mkdir -p bootstrap/cache
-      - chmod -R 775 storage
-      - chmod -R 775 bootstrap/cache
-      - echo "Setting up environment file..."
-      - cp .env.example .env || echo "No .env.example found, creating basic .env"
-      - echo "APP_NAME=Laravel" > .env
-      - echo "APP_ENV=production" >> .env
-      - echo "APP_KEY=" >> .env
-      - echo "APP_DEBUG=false" >> .env
-      - echo "APP_URL=http://localhost" >> .env
-      - echo "VIEW_COMPILED_PATH=${CODEBUILD_SRC_DIR}/storage/framework/views" >> .env
-      
-  build:
-    commands:
-      - echo "Build started on `date`"
-      - echo "Installing Composer dependencies without scripts..."
-      - composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
-      - echo "Generating application key..."
-      - php artisan key:generate --no-interaction --force
-      - echo "Running package discovery manually..."
-      - php artisan package:discover --ansi
-      - echo "Clearing and caching configurations..."
-      - php artisan config:clear
-      - php artisan config:cache
-      - php artisan route:cache
-      - php artisan view:cache
-      - echo "Build completed successfully"
-      
-  post_build:
-    commands:
-      - echo "Post-build phase started on `date`"
-      - echo "Cleaning up sensitive files..."
-      - rm -f .env
-      - echo "Build process completed on `date`"
+# Install PHP dependencies
+composer install
 
-artifacts:
-  files:
-    - '**/*'
-  exclude-paths:
-    - node_modules/**/*
-    - .git/**/*
-    - tests/**/*
-    - .env
-    - .env.example
-    - storage/logs/**/*
+# Generate application key
+php artisan key:generate
 
-cache:
-  paths:
-    - '/root/.composer/**/*'
+# Create storage directories
+mkdir -p storage/framework/{views,cache,sessions}
+chmod -R 775 storage bootstrap/cache
+
+# Clear caches
+php artisan config:clear
+php artisan cache:clear
+
+# Install NPM dependencies
+npm install
+
+# Serve the application
+php artisan serve
