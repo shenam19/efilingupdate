@@ -5,12 +5,16 @@ phases:
     runtime-versions:
       php: 8.2
     commands:
-      - echo "Installing composer dependencies..."
+      - echo "Installing Composer dependencies..."
       - composer install --no-dev --optimize-autoloader
   pre_build:
     commands:
-      - echo "Setting up Laravel cache directories..."
-      - mkdir -p storage/framework/{cache,sessions,views}
+      - echo "Setting up Laravel cache paths..."
+      - mkdir -p bootstrap/cache
+      - mkdir -p storage/framework/cache
+      - mkdir -p storage/framework/sessions
+      - mkdir -p storage/framework/views
+      - chmod -R 775 storage bootstrap/cache
       - cp .env.example .env
       - php artisan config:cache
       - php artisan route:cache
