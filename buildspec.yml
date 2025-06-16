@@ -1,18 +1,25 @@
+version: 0.2
+
 phases:
   install:
     runtime-versions:
       php: 8.1
     commands:
-      - echo "Installing dependencies..."
-      - composer install
+      - echo "Installing composer dependencies..."
+      - composer install --no-dev --optimize-autoloader
   pre_build:
     commands:
-      - echo "Creating Laravel cache directories..."
-      - mkdir -p storage/framework/cache
-      - mkdir -p storage/framework/sessions
-      - mkdir -p storage/framework/views
-  build:
-    commands:
+      - echo "Setting up Laravel cache directories..."
+      - mkdir -p storage/framework/{cache,sessions,views}
+      - cp .env.example .env
       - php artisan config:cache
       - php artisan route:cache
       - php artisan view:cache
+  build:
+    commands:
+      - echo "Build complete. Ready to deploy."
+artifacts:
+  files:
+    - '**/*'
+    - '!**/node_modules/**'
+    - '!**/tests/**'
