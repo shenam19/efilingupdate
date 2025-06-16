@@ -6,35 +6,36 @@ phases:
       php: 8.2
       nodejs: 18
     commands:
-      - echo "Installing required system packages"
-      - apt-get update && apt-get install -y unzip zip libpng-dev libonig-dev libxml2-dev
+      - echo "Installing system dependencies"
+      - apt-get update && apt-get install -y unzip zip libpng-dev libonig-dev libxml2-dev libzip-dev
       - echo "Installing Composer"
       - curl -sS https://getcomposer.org/installer | php
       - mv composer.phar /usr/local/bin/composer
 
   pre_build:
     commands:
-      - echo "Setting up Laravel directories and permissions"
-      - mkdir -p storage/framework/cache
+      - echo "Creating Laravel storage directories"
       - mkdir -p storage/framework/sessions
       - mkdir -p storage/framework/views
+      - mkdir -p storage/framework/cache
       - mkdir -p storage/logs
       - mkdir -p bootstrap/cache
       - chmod -R 775 storage bootstrap/cache
       - echo "Installing Composer dependencies"
       - composer install --no-interaction --prefer-dist --optimize-autoloader
+      - echo "Setting up environment"
       - cp .env.example .env || true
       - php artisan key:generate
       - php artisan config:cache
 
   build:
     commands:
-      - echo "Running database migrations"
-      - php artisan migrate --force || echo "Skipping migrations if DB is not set"
+      - echo "Running Laravel migrations"
+      - php artisan migrate --force || echo "Skipping migration (DB not configured?)"
 
   post_build:
     commands:
-      - echo "Laravel build completed successfully on `date`"
+      - echo "✅ Laravel build finished at `date`"
 
 artifacts:
   files:
