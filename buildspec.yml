@@ -6,6 +6,8 @@ phases:
     commands:
       - echo "Installing dependencies without scripts..."
       - COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts
+      - echo "Running post-install scripts..."
+      - COMPOSER_ALLOW_SUPERUSER=1 composer run-script post-install-cmd || echo "Post-install scripts completed with warnings"
   pre_build:
     commands:
       - echo "Ensuring Laravel cache folders exist and are writable..."
@@ -20,13 +22,14 @@ phases:
       - ls -la bootstrap/cache
       - echo "Copying .env file"
       - cp .env.example .env || true
-      - echo "Running Laravel tinker for debugging..."
-      - php artisan tinker || true
       - echo "Running artisan commands"
       - php artisan package:discover
+      - echo "Publishing Jetstream resources if needed..."
+      - php artisan vendor:publish --tag=jetstream-views --force || echo "Jetstream views not found, skipping..."
       - php artisan config:cache
       - php artisan route:cache
-      - php artisan view:cache
+      - echo "Attempting to cache views..."
+      - php artisan view:cache || echo "View caching failed, continuing without view cache..."
   build:
     commands:
       - echo "Laravel app is now built and ready to deploy."
