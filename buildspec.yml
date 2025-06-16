@@ -1,56 +1,144 @@
-# buildspec.yml - AWS CodeBuild configuration
-version: 0.2
+# OPTION 1: Completely disable package discovery
+# Create a custom composer.json that skips problematic scripts
+cat > composer.json.backup << 'EOF'
+{
+    "scripts": {
+        "post-autoload-dump": [],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}
+EOF
 
-phases:
-  pre_build:
-    commands:
-      - echo "Pre-build phase started on `date`"
-      - echo "Creating Laravel storage directories..."
-      # Create all required Laravel directories BEFORE composer install
-      - mkdir -p storage/app/public
-      - mkdir -p storage/framework/cache/data
-      - mkdir -p storage/framework/sessions
-      - mkdir -p storage/framework/testing
-      - mkdir -p storage/framework/views
-      - mkdir -p storage/logs
-      - mkdir -p bootstrap/cache
-      # Set permissions
-      - chmod -R 775 storage
-      - chmod -R 775 bootstrap/cache
-      # Create .env file
-      - cp .env.example .env
-      
-  build:
-    commands:
-      - echo "Build phase started on `date`"
-      # Install composer dependencies WITHOUT running post-install scripts
-      - composer install --no-scripts --no-dev --optimize-autoloader
-      # Now manually run the autoloader generation
-      - composer dump-autoload --optimize
-      # Generate application key
-      - php artisan key:generate --force
-      # Run package discovery manually (now that directories exist)
-      - php artisan package:discover --ansi
-      # Clear caches
-      - php artisan config:clear
-      - php artisan cache:clear
-      - php artisan view:clear
-      # Install NPM dependencies if needed
-      - npm ci --only=production
-      # Build assets if needed
-      - npm run production
-      
-  post_build:
-    commands:
-      - echo "Post-build phase started on `date`"
-      - echo "Build completed successfully"
+# Backup original composer.json and use the modified one
+cp composer.json composer.json.original
+# Merge the scripts section (you'll need to manually edit composer.json)
+# Then run:
+composer install
+# Restore original composer.json
+cp composer.json.original composer.json
 
-artifacts:
-  files:
-    - '**/*'
-  name: laravel-app-$(date +%Y-%m-%d)
+# =============================================
 
-cache:
-  paths:
-    - 'vendor/**/*'
-    - 'node_modules/**/*'
+# OPTION 2: Force create directories with environment variables
+export LARAVEL_STORAGE_PATH=/tmp/laravel_storage
+export VIEW_COMPILED_PATH=/tmp/laravel_storage/views
+export CACHE_PATH=/tmp/laravel_storage/cache
+
+mkdir -p /tmp/laravel_storage/{views,cache,sessions,logs}
+mkdir -p bootstrap/cache
+chmod -R 777 /tmp/laravel_storage
+chmod -R 777 bootstrap/cache
+
+# Create a bootstrap file to override paths
+cat > bootstrap/cache_override.php << 'EOF'
+<?php
+// Override cache paths for containerized environments
+if (!is_dir('/tmp/laravel_storage/views')) {
+    mkdir('/tmp/laravel_storage/views', 0777, true);
+}
+if (!is_dir('/tmp/laravel_storage/cache')) {
+    mkdir('/tmp/laravel_storage/cache', 0777, true);
+}
+EOF
+
+# Include this in your bootstrap/app.php
+echo "require_once __DIR__.'/cache_override.php';" >> bootstrap/app.php
+
+composer install
+
+# =============================================
+
+# OPTION 3: Manual vendor installation
+# Download dependencies manually without running scripts
+composer install --no-scripts --no-autoloader
+composer dumpautoload --no-scripts
+
+# Create all directories
+mkdir -p storage/{app,framework/{cache,sessions,views},logs}
+mkdir -p bootstrap/cache
+chmod -R 777 storage bootstrap/cache
+
+# Generate optimized autoloader
+composer dump-autoload --optimize
+
+# =============================================
+
+# OPTION 4: Use a different PHP version or environment
+# Sometimes the issue is with the PHP version in the container
+php --version
+# If using PHP 8.0+, try with PHP 7.4
+# Or use a different base image
+
+# =============================================
+
+# OPTION 5: Patch the Laravel Framework (Nuclear Option)
+# Create a patch for the Compiler.php file
+mkdir -p patches
+cat > patches/compiler_fix.patch << 'EOF'
+--- a/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php
++++ b/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php
+@@ -64,7 +64,11 @@ abstract class Compiler
+         $compiledExtension = 'php',
+     ) {
+         if (! $cachePath) {
+-            throw new InvalidArgumentException('Please provide a valid cache path.');
++            $cachePath = sys_get_temp_dir() . '/laravel_views';
++            if (!is_dir($cachePath)) {
++                mkdir($cachePath, 0777, true);
++            }
++            // throw new InvalidArgumentException('Please provide a valid cache path.');
+         }
+ 
+         $this->files = $files;
+EOF
+
+# Apply the patch after composer install --no-scripts
+composer install --no-scripts
+patch -p1 < patches/compiler_fix.patch
+composer dump-autoload
+
+# =============================================
+
+# OPTION 6: Create a custom artisan command
+# Create directories before any Laravel initialization
+cat > create_dirs.php << 'EOF'
+<?php
+$dirs = [
+    'storage/app',
+    'storage/framework/cache',
+    'storage/framework/sessions', 
+    'storage/framework/views',
+    'storage/logs',
+    'bootstrap/cache'
+];
+
+foreach ($dirs as $dir) {
+    if (!is_dir($dir)) {
+        mkdir($dir, 0775, true);
+        echo "Created: $dir\n";
+    }
+}
+
+// Also create temp directories
+$tempDirs = [
+    '/tmp/laravel_views',
+    '/tmp/laravel_cache'
+];
+
+foreach ($tempDirs as $dir) {
+    if (!is_dir($dir)) {
+        mkdir($dir, 0777, true);
+        echo "Created: $dir\n";
+    }
+}
+
+echo "All directories created successfully!\n";
+EOF
+
+php create_dirs.php
+composer install
