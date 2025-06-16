@@ -5,18 +5,20 @@ phases:
     runtime-versions:
       php: 8.2
     commands:
-      - echo "Creating Laravel directories..."
-      - mkdir -p bootstrap/cache
-      - mkdir -p storage/framework/{cache,sessions,views}
-      - chmod -R 775 storage bootstrap/cache
-
-      - echo "Installing dependencies without post-autoload scripts..."
+      - echo "Installing composer dependencies without scripts..."
       - COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts
 
   pre_build:
     commands:
-      - echo "Setting up environment..."
+      - echo "Ensuring Laravel cache directories exist (in case)"
+      - mkdir -p storage/framework/{cache,sessions,views}
+      - mkdir -p bootstrap/cache
+      - chmod -R 775 storage bootstrap/cache
+
+      - echo "Copying .env file"
       - cp .env.example .env || true
+
+      - echo "Running Laravel setup"
       - php artisan package:discover
       - php artisan config:cache
       - php artisan route:cache
