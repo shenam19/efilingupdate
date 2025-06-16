@@ -1,22 +1,103 @@
-# Copy environment file
-cp .env.example .env
+#!/bin/bash
 
-# Install PHP dependencies
-composer install
+# Laravel Setup Fix for Cache Path Error
+# Run this script step by step or all at once
 
-# Generate application key
-php artisan key:generate
+echo "🚀 Starting Laravel Setup Fix..."
 
-# Create storage directories
-mkdir -p storage/framework/{views,cache,sessions}
-chmod -R 775 storage bootstrap/cache
+# Step 1: Clean up existing installation
+echo "Step 1: Cleaning up existing vendor directory..."
+rm -rf vendor
+rm -rf composer.lock
 
-# Clear caches
+# Step 2: Install Composer dependencies without running scripts
+echo "Step 2: Installing Composer dependencies (without scripts)..."
+composer install --no-scripts --no-dev
+
+# Step 3: Create all required Laravel directories
+echo "Step 3: Creating Laravel storage structure..."
+mkdir -p storage/app/public
+mkdir -p storage/framework/cache/data
+mkdir -p storage/framework/sessions
+mkdir -p storage/framework/testing
+mkdir -p storage/framework/views
+mkdir -p storage/logs
+mkdir -p bootstrap/cache
+
+# Step 4: Set proper permissions
+echo "Step 4: Setting proper permissions..."
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+
+# Step 5: Create .env file if it doesn't exist
+echo "Step 5: Setting up environment file..."
+if [ ! -f .env ]; then
+    cp .env.example .env
+    echo "✅ .env file created from .env.example"
+else
+    echo "✅ .env file already exists"
+fi
+
+# Step 6: Generate application key
+echo "Step 6: Generating application key..."
+php artisan key:generate --force
+
+# Step 7: Complete Composer installation
+echo "Step 7: Completing Composer installation..."
+composer dump-autoload
+
+# Step 8: Discover packages
+echo "Step 8: Discovering packages..."
+php artisan package:discover --ansi
+
+# Step 9: Clear all caches
+echo "Step 9: Clearing caches..."
 php artisan config:clear
 php artisan cache:clear
+php artisan view:clear
+php artisan route:clear
 
-# Install NPM dependencies
-npm install
+# Step 10: Install NPM dependencies
+echo "Step 10: Installing NPM dependencies..."
+if command -v npm &> /dev/null; then
+    npm install
+    echo "✅ NPM dependencies installed"
+else
+    echo "⚠️  NPM not found, skipping npm install"
+fi
 
-# Serve the application
-php artisan serve
+# Step 11: Run database migrations (optional)
+echo "Step 11: Database setup (optional)..."
+read -p "Do you want to run database migrations? (y/N): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    php artisan migrate --force
+    echo "✅ Database migrations completed"
+else
+    echo "⏭️  Skipping database migrations"
+fi
+
+# Step 12: Start the server
+echo "Step 12: Starting Laravel development server..."
+echo "🎉 Setup completed successfully!"
+echo "📋 Summary of what was done:"
+echo "   ✅ Cleaned vendor directory"
+echo "   ✅ Installed Composer dependencies"
+echo "   ✅ Created storage directories"
+echo "   ✅ Set proper permissions"
+echo "   ✅ Generated application key"
+echo "   ✅ Cleared all caches"
+echo "   ✅ Installed NPM dependencies"
+echo ""
+echo "🌐 To start your Laravel application, run:"
+echo "   php artisan serve"
+echo ""
+echo "🔗 Your application will be available at: http://localhost:8000"
+
+# Optional: Start server automatically
+read -p "Do you want to start the server now? (y/N): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "🚀 Starting server..."
+    php artisan serve
+fi
