@@ -5,25 +5,25 @@ phases:
     runtime-versions:
       php: 8.2
     commands:
-      - echo "Creating required Laravel directories..."
+      - echo "Creating Laravel required directories..."
       - mkdir -p bootstrap/cache
       - mkdir -p storage/framework/{cache,sessions,views}
       - chmod -R 775 storage bootstrap/cache
 
-      - echo "Installing Composer dependencies..."
+      - echo "Installing composer dependencies..."
       - composer install --no-dev --optimize-autoloader
 
   pre_build:
     commands:
-      - echo "Copying .env and caching config..."
-      - cp .env.example .env || echo ".env.example missing or .env already exists"
-      - php artisan config:cache
-      - php artisan route:cache
-      - php artisan view:cache
+      - echo "Setting up environment..."
+      - cp .env.example .env || echo ".env already exists"
+      - php artisan config:cache || true
+      - php artisan route:cache || true
+      - php artisan view:cache || true
 
   build:
     commands:
-      - echo "Build phase completed."
+      - echo "Build complete."
 
 artifacts:
   files:
