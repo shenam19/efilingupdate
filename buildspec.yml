@@ -12,9 +12,9 @@ phases:
     commands:
       - echo "Creating Laravel cache directories..."
       - mkdir -p bootstrap/cache
-      - mkdir -p storage/framework/views
       - mkdir -p storage/framework/cache
       - mkdir -p storage/framework/sessions
+      - mkdir -p storage/framework/views
       - chmod -R 775 storage bootstrap/cache
 
       - echo "Checking folder permissions and existence"
@@ -24,9 +24,6 @@ phases:
 
       - echo "Copying .env file"
       - cp .env.example .env || true
-
-      - echo "Running Laravel tinker for debugging..."
-      - php artisan tinker || true
 
       - echo "Running artisan commands"
       - php artisan package:discover
