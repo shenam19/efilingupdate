@@ -5,20 +5,28 @@ phases:
     runtime-versions:
       php: 8.2
     commands:
-      - echo "Installing composer dependencies without scripts..."
+      - echo "Installing dependencies without scripts..."
       - COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts
 
   pre_build:
     commands:
-      - echo "Ensuring Laravel cache directories exist (in case)"
-      - mkdir -p storage/framework/{cache,sessions,views}
+      - echo "Ensuring Laravel cache folders exist and are writable..."
       - mkdir -p bootstrap/cache
+      - mkdir -p storage/framework/{views,cache,sessions}
       - chmod -R 775 storage bootstrap/cache
+
+      - echo "Checking folder permissions and existence"
+      - ls -la storage/framework/
+      - ls -la storage/framework/views
+      - ls -la bootstrap/cache
 
       - echo "Copying .env file"
       - cp .env.example .env || true
 
-      - echo "Running Laravel setup"
+      - echo "Running Laravel tinker for debugging..."
+      - php artisan tinker || true
+
+      - echo "Running artisan commands"
       - php artisan package:discover
       - php artisan config:cache
       - php artisan route:cache
@@ -26,7 +34,7 @@ phases:
 
   build:
     commands:
-      - echo "Build complete."
+      - echo "Laravel app is now built and ready to deploy."
 
 artifacts:
   files:
