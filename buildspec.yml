@@ -28,9 +28,11 @@ phases:
       - echo "APP_DEBUG=false" >> .env
       - echo "APP_KEY=" >> .env
       - echo "Installing Composer dependencies..."
-      - composer install --no-dev --optimize-autoloader --no-interaction
+      - composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
       - echo "Generating application key..."
       - php artisan key:generate --no-interaction --force
+      - echo "Running package discovery..."
+      - php artisan package:discover --ansi
       - echo "Caching configuration..."
       - php artisan config:cache
       - php artisan route:cache
