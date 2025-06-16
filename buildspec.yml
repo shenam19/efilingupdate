@@ -1,23 +1,56 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
-      php: 8.1 
+      php: 8.1
     commands:
-apt-get update -y
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-apt-get install -y libpq-dev libzip-dev
-apt-get install -y php-pgsql
-curl -sS https://getcomposer.org/installer -o composer-setup.php 
-php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+      - echo "Installing system dependencies..."
+      
   pre_build:
     commands:
-composer install
-npm install
+      - echo "Pre-build phase started on `date`"
+      - echo "Setting up Laravel directories..."
+      - mkdir -p storage/framework/cache/data
+      - mkdir -p storage/framework/sessions
+      - mkdir -p storage/framework/views
+      - mkdir -p storage/logs
+      - mkdir -p bootstrap/cache
+      - chmod -R 775 storage
+      - chmod -R 775 bootstrap/cache
+      
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "Setting up environment..."
+      - cp .env.example .env
+      - echo "APP_ENV=production" >> .env
+      - echo "APP_DEBUG=false" >> .env
+      - echo "APP_KEY=" >> .env
+      - echo "Installing Composer dependencies..."
+      - composer install --no-dev --optimize-autoloader --no-interaction
+      - echo "Generating application key..."
+      - php artisan key:generate --no-interaction --force
+      - echo "Caching configuration..."
+      - php artisan config:cache
+      - php artisan route:cache
+      - php artisan view:cache
+      
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+      - echo "Cleaning up..."
+      - rm -f .env
+
 artifacts:
   files:
-'**/*'
-  name: $(date +%Y-%m-%dT%H:%M:%S).zip
-proxy:
-  upload-artifacts: yes
-  logs: yes
+    - '**/*'
+  exclude-paths:
+    - node_modules/**/*
+    - .git/**/*
+    - tests/**/*
+    - .env.example
+
+cache:
+  paths:
+    - '/root/.composer/**/*'
