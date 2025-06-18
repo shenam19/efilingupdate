@@ -14,12 +14,19 @@ jobs:
       
       - name: Create required Laravel directories
         run: |
+          mkdir -p bootstrap/cache
           mkdir -p storage/framework/sessions
           mkdir -p storage/framework/views
           mkdir -p storage/framework/cache
+          mkdir -p storage/app/public
+          mkdir -p storage/logs
+          # Create .gitkeep files to ensure directories exist in zip
+          touch bootstrap/cache/.gitkeep
           touch storage/framework/sessions/.gitkeep
           touch storage/framework/views/.gitkeep
           touch storage/framework/cache/.gitkeep
+          touch storage/app/public/.gitkeep
+          touch storage/logs/.gitkeep
           
       - name: Create zip deployment package
         run: zip -r deploy.zip ./
