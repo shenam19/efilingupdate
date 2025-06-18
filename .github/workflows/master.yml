@@ -1,39 +1,39 @@
-name: Deploy Laravel to Elastic Beanstalk
+name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  deploy:
-    name: Deploy
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-          extensions: mbstring, bcmath, curl, xml, intl, zip, pdo, pdo_mysql
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.2
+        extensions: mbstring, bcmath, curl, xml, intl, zip, pdo, pdo_mysql
+        tools: composer
 
-      - name: Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader
+    - name: Create necessary Laravel directories
+      run: |
+        mkdir -p storage/framework/cache
+        mkdir -p storage/framework/sessions
+        mkdir -p storage/framework/views
+        mkdir -p bootstrap/cache
 
-      - name: Prepare deployment zip
-        run: zip -r deploy.zip . -x '*.git*'
+    - name: Install dependencies
+      run: composer install --no-dev --optimize-autoloader
 
-      - name: Deploy to Elastic Beanstalk
-        uses: einaregilsson/beanstalk-deploy@v18
-        with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: efiling_new
-          environment_name: Efilingnew-env
-          version_label: ${{ github.run_number }}
-          region: eu-north-1
-          existing_bucket_name: elasticbeanstalk-eu-north-1-953491815896
-          deployment_package: deploy.zip
+    - name: Set application key
+      run: php artisan key:generate
+
+    # Optional: Run tests
+    # - name: Run tests
+    #   run: php artisan test
