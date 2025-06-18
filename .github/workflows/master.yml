@@ -1,42 +1,69 @@
 name: CI
-
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
 jobs:
   laravel-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+        
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
           extensions: mbstring, bcmath, curl, xml, intl, zip, pdo, pdo_mysql
           tools: composer
-
-      - name: Prepare Laravel cache directories
+          
+      - name: Create Laravel directories
         run: |
           mkdir -p bootstrap/cache
-          mkdir -p storage/framework/cache
+          mkdir -p storage/app
+          mkdir -p storage/framework/cache/data
           mkdir -p storage/framework/sessions
           mkdir -p storage/framework/views
-
+          mkdir -p storage/logs
+          
       - name: Set correct permissions
-        run: chmod -R 755 storage bootstrap/cache
-
+        run: |
+          chmod -R 775 storage
+          chmod -R 775 bootstrap/cache
+          
+      - name: Copy environment file
+        run: cp .env.example .env
+        
       - name: Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader
-
+        run: composer install --no-dev --optimize-autoloader --no-interaction
+        
       - name: Generate application key
-        run: php artisan key:generate
-
-      # Optional: Add DB setup and test running if needed
+        run: php artisan key:generate --ansi
+        
+      - name: Clear and cache config
+        run: |
+          php artisan config:clear
+          php artisan config:cache
+          
+      - name: Cache routes (optional)
+        run: php artisan route:cache
+        
+      - name: Cache views (optional)
+        run: php artisan view:cache
+        
+      # Optional: Add database setup if needed
+      # - name: Create Database
+      #   run: |
+      #     mkdir -p database
+      #     touch database/database.sqlite
+      #     
+      # - name: Run migrations
+      #   env:
+      #     DB_CONNECTION: sqlite
+      #     DB_DATABASE: database/database.sqlite
+      #   run: php artisan migrate --force
+      
+      # Optional: Run tests
       # - name: Run Laravel tests
       #   run: php artisan test
