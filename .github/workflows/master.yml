@@ -12,20 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Create Laravel directories
+      - name: Create required Laravel directories
         run: |
-          mkdir -p bootstrap/cache
           mkdir -p storage/framework/sessions
           mkdir -p storage/framework/views
-          mkdir -p storage/framework/cache/data
-          mkdir -p storage/app/public
-          mkdir -p storage/logs
-          touch bootstrap/cache/.gitkeep
+          mkdir -p storage/framework/cache
           touch storage/framework/sessions/.gitkeep
           touch storage/framework/views/.gitkeep
-          touch storage/framework/cache/data/.gitkeep
-          touch storage/app/public/.gitkeep
-          touch storage/logs/.gitkeep
+          touch storage/framework/cache/.gitkeep
           
       - name: Create zip deployment package
         run: zip -r deploy.zip ./
