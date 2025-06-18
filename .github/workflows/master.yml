@@ -1,69 +1,27 @@
-name: CI
+name: Laravel-deployment
 on:
+#   pull_request:
+#     types: [ closed ]
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
+
 jobs:
-  laravel-tests:
+  deploy:
     runs-on: ubuntu-latest
+    # if: github.event.pull_request.merged == true
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
+      - uses: actions/checkout@v2
+      - name: Create zip deployment package
+        run: zip -r deploy.zip ./
+      - name: Deploy to elastic beanstalk
+        uses: einaregilsson/beanstalk-deploy@v18
         with:
-          php-version: 8.2
-          extensions: mbstring, bcmath, curl, xml, intl, zip, pdo, pdo_mysql
-          tools: composer
-          
-      - name: Create Laravel directories
-        run: |
-          mkdir -p bootstrap/cache
-          mkdir -p storage/app
-          mkdir -p storage/framework/cache/data
-          mkdir -p storage/framework/sessions
-          mkdir -p storage/framework/views
-          mkdir -p storage/logs
-          
-      - name: Set correct permissions
-        run: |
-          chmod -R 775 storage
-          chmod -R 775 bootstrap/cache
-          
-      - name: Copy environment file
-        run: cp .env.example .env
-        
-      - name: Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader --no-interaction
-        
-      - name: Generate application key
-        run: php artisan key:generate --ansi
-        
-      - name: Clear and cache config
-        run: |
-          php artisan config:clear
-          php artisan config:cache
-          
-      - name: Cache routes (optional)
-        run: php artisan route:cache
-        
-      - name: Cache views (optional)
-        run: php artisan view:cache
-        
-      # Optional: Add database setup if needed
-      # - name: Create Database
-      #   run: |
-      #     mkdir -p database
-      #     touch database/database.sqlite
-      #     
-      # - name: Run migrations
-      #   env:
-      #     DB_CONNECTION: sqlite
-      #     DB_DATABASE: database/database.sqlite
-      #   run: php artisan migrate --force
-      
-      # Optional: Run tests
-      # - name: Run Laravel tests
-      #   run: php artisan test
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: efiling_new
+          environment_name: Efilingnew-env
+          existing_bucket_name: elasticbeanstalk-eu-north-1-953491815896
+          version_label: 1
+          region: eu-north-1
+          deployment_package: deploy.zip
