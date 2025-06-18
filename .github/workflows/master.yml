@@ -13,20 +13,22 @@ jobs:
       - name: List files before cleanup
         run: ls -la
         
+      - name: Install production dependencies
+        run: |
+          # Install production dependencies first
+          composer install --no-dev --optimize-autoloader
+          
       - name: Clean up unnecessary files
         run: |
-          # Remove files that might trigger composer
-          rm -rf vendor/
+          # Remove development files but keep vendor/
           rm -rf node_modules/
-          # Don't remove composer.json or .lock as EB needs them
-          # Remove development files
           rm -rf tests/
           rm -f phpunit.xml*
           rm -f webpack.mix.js
           rm -f package*.json
           rm -f yarn.lock
           
-      - name: Create Laravel directories
+      - name: Create Laravel directories and .gitkeep files
         run: |
           # Create required Laravel directories
           mkdir -p bootstrap/cache
@@ -37,11 +39,17 @@ jobs:
           mkdir -p storage/framework/views
           mkdir -p storage/logs
           
-      - name: Set proper permissions
-        run: |
-          # Set permissions for Laravel directories
-          chmod -R 755 bootstrap/cache
-          chmod -R 755 storage
+          # Create .gitkeep files to ensure directories exist in deployment
+          touch bootstrap/cache/.gitkeep
+          touch storage/app/.gitkeep
+          touch storage/app/public/.gitkeep
+          touch storage/framework/.gitkeep
+          touch storage/framework/cache/.gitkeep
+          touch storage/framework/cache/data/.gitkeep
+          touch storage/framework/sessions/.gitkeep
+          touch storage/framework/testing/.gitkeep
+          touch storage/framework/views/.gitkeep
+          touch storage/logs/.gitkeep
           
       - name: List files after cleanup  
         run: ls -la
