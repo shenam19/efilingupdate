@@ -7,34 +7,35 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    container: ubuntu:20.04
     steps:
-      - name: Install basic tools
-        run: |
-          apt-get update
-          apt-get install -y zip git
-          
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          clean: true
-          
-      - name: Remove all potentially problematic files
+        
+      - name: List files before cleanup
+        run: ls -la
+        
+      - name: Clean up unnecessary files
         run: |
-          rm -rf vendor/ || true
-          rm -rf node_modules/ || true
-          rm -f composer.lock || true
-          rm -f composer.phar || true
-          find . -name "composer" -type f -delete || true
+          # Remove files that might trigger composer
+          rm -rf vendor/
+          rm -rf node_modules/
+          # Don't remove composer.json or .lock as EB needs them
+          # Remove development files
+          rm -rf tests/
+          rm -f phpunit.xml*
+          rm -f webpack.mix.js
+          rm -f package*.json
+          rm -f yarn.lock
           
+      - name: List files after cleanup  
+        run: ls -la
+        
       - name: Create deployment package
         run: |
           zip -r deploy.zip . \
             -x "*.git*" \
             -x ".env*" \
-            -x "storage/logs/*" \
-            -x "tests/*" \
-            -x "*.md"
+            -x "storage/logs/*"
             
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
