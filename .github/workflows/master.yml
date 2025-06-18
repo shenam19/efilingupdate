@@ -11,19 +11,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - name: Create deployment package
+      - name: Prepare deployment package  
         run: |
-          # Exclude unnecessary files from deployment
+          # Remove any existing vendor directory
+          rm -rf vendor
+          rm -rf node_modules
+          # Create deployment package excluding development files
           zip -r deploy.zip . \
             -x "*.git*" \
             -x "node_modules/*" \
             -x "tests/*" \
             -x "*.md" \
-            -x "phpunit.xml" \
+            -x "phpunit.xml*" \
             -x "webpack.mix.js" \
             -x "package.json" \
             -x "package-lock.json" \
-            -x "yarn.lock"
+            -x "yarn.lock" \
+            -x "vendor/*" \
+            -x ".env" \
+            -x "storage/logs/*"
             
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
