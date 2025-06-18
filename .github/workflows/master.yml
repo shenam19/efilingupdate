@@ -1,7 +1,5 @@
 name: Laravel-deployment
 on:
-#   pull_request:
-#     types: [ closed ]
   push:
     branches:
       - main
@@ -9,19 +7,33 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # if: github.event.pull_request.merged == true
     steps:
-      - uses: actions/checkout@v2
-      - name: Create zip deployment package
-        run: zip -r deploy.zip ./
-      - name: Deploy to elastic beanstalk
-        uses: einaregilsson/beanstalk-deploy@v18
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Create deployment package
+        run: |
+          # Exclude unnecessary files from deployment
+          zip -r deploy.zip . \
+            -x "*.git*" \
+            -x "node_modules/*" \
+            -x "tests/*" \
+            -x "*.md" \
+            -x "phpunit.xml" \
+            -x "webpack.mix.js" \
+            -x "package.json" \
+            -x "package-lock.json" \
+            -x "yarn.lock"
+            
+      - name: Deploy to Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: efiling_new
           environment_name: Efilingnew-env
           existing_bucket_name: elasticbeanstalk-eu-north-1-953491815896
-          version_label: 1
+          version_label: ${{ github.sha }}
           region: eu-north-1
           deployment_package: deploy.zip
+          wait_for_environment_recovery: 300
