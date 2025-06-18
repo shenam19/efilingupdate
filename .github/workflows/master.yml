@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     # if: github.event.pull_request.merged == true
     steps:
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v2
       - name: Create zip deployment package
         run: zip -r deploy.zip ./
       - name: Deploy to elastic beanstalk
