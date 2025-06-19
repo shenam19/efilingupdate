@@ -5,7 +5,7 @@
 
 # /storage/app/*
 # /storage/logs/*
-/vendor
+# /vendor
 .env
 .env.backup
 # /storage/*.key
