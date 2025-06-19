@@ -49,7 +49,7 @@ jobs:
           application_name: efiling_new
           environment_name: Efilingnew-env
           existing_bucket_name: elasticbeanstalk-eu-north-1-953491815896
-          version_label: ${{ github.sha }}
+          version_label: deploy-${{ github.run_number }}-${{ github.sha }}
           region: eu-north-1
           deployment_package: deploy.zip
           use_existing_version_if_available: true 
