@@ -1,5 +1,4 @@
 name: Laravel-deployment
-
 on:
   push:
     branches:
@@ -8,17 +7,16 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@v4  # Updated to v4
+      
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           extensions: mbstring, bcmath, curl, xml, intl, zip, pdo, pdo_mysql
           tools: composer
-
+          
       - name: Install Composer dependencies
         run: |
           mkdir -p bootstrap/cache
@@ -27,12 +25,16 @@ jobs:
           mkdir -p storage/framework/cache
           mkdir -p storage/logs
           composer install --no-dev --optimize-autoloader
-
+          
       - name: Create deployment zip
         run: zip -r deploy.zip . -x "vendor/*" ".git/*" "tests/*" "node_modules/*"
-
+        
+      - name: Generate unique version label
+        id: version
+        run: echo "label=deploy-${{ github.run_id }}-${{ github.run_number }}-$(date +%Y%m%d%H%M%S)" >> $GITHUB_OUTPUT
+        
       - name: Deploy to Elastic Beanstalk
-        uses: einaregilsson/beanstalk-deploy@v18
+        uses: einaregilsson/beanstalk-deploy@v21  # Updated to latest version
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -41,6 +43,5 @@ jobs:
           existing_bucket_name: elasticbeanstalk-eu-north-1-953491815896
           region: eu-north-1
           deployment_package: deploy.zip
-          version_label: deploy-${{ github.run_id }}-${{ github.run_number }}
-          
-         
+          version_label: ${{ steps.version.outputs.label }}
+          use_existing_version_if_available: true  # This will use existing version if available
