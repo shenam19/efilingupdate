@@ -5,32 +5,15 @@ on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     # if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Create required Laravel directories
-        run: |
-          mkdir -p bootstrap/cache
-          mkdir -p storage/framework/sessions
-          mkdir -p storage/framework/views
-          mkdir -p storage/framework/cache
-          mkdir -p storage/app/public
-          mkdir -p storage/logs
-          # Create .gitkeep files to ensure directories exist in zip
-          touch bootstrap/cache/.gitkeep
-          touch storage/framework/sessions/.gitkeep
-          touch storage/framework/views/.gitkeep
-          touch storage/framework/cache/.gitkeep
-          touch storage/app/public/.gitkeep
-          touch storage/logs/.gitkeep
-          
       - name: Create zip deployment package
         run: zip -r deploy.zip ./
-        
       - name: Deploy to elastic beanstalk
         uses: einaregilsson/beanstalk-deploy@v18
         with:
@@ -39,6 +22,6 @@ jobs:
           application_name: efiling_new
           environment_name: Efilingnew-env
           existing_bucket_name: elasticbeanstalk-eu-north-1-953491815896
-          version_label: ${{ github.sha }}
+          version_label: 1
           region: eu-north-1
           deployment_package: deploy.zip
