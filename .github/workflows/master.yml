@@ -1,7 +1,6 @@
 name: Laravel-deployment
+
 on:
-#   pull_request:
-#     types: [ closed ]
   push:
     branches:
       - main
@@ -9,12 +8,40 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # if: github.event.pull_request.merged == true
+
     steps:
       - uses: actions/checkout@v2
-      - name: Create zip deployment package
-        run: zip -r deploy.zip ./
-      - name: Deploy to elastic beanstalk
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, bcmath, curl, xml, intl, zip, pdo, pdo_mysql
+          tools: composer
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Ensure Laravel folders exist
+        run: |
+          mkdir -p bootstrap/cache
+          mkdir -p storage/framework/sessions
+          mkdir -p storage/framework/views
+          mkdir -p storage/framework/cache
+          mkdir -p storage/logs
+          touch bootstrap/cache/.gitkeep
+          touch storage/framework/sessions/.gitkeep
+          touch storage/framework/views/.gitkeep
+          touch storage/framework/cache/.gitkeep
+          touch storage/logs/.gitkeep
+
+      - name: Set correct permissions
+        run: chmod -R 775 bootstrap/cache storage
+
+      - name: Zip deployment package
+        run: zip -r deploy.zip . -x "tests/*" ".github/*" "node_modules/*"
+
+      - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v18
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
