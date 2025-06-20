@@ -3,7 +3,7 @@
         <div class="banner">
             <div class="message">
                 <img src="{{ asset('img/cta_logo_red.png') }}" class="logo">
-                <h1 class="welcoming">བོད་མིའི་སྒྲིག་འཛུགས་ཀྱི་གློག་འཕྲུལ་ཡིག་ཚགས་ལ་ཕེབས་པར་དགའ་བསུ་ཞུ།</h1>
+                <h1 class="welcoming">Testing efiling</h1>
             </div>
         </div>
 
