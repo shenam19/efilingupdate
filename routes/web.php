@@ -23,6 +23,10 @@ use Carbon\Carbon;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/health-check', function () {
+    return response('OK', 200);
+});
+
 
 Route::get('/include-time-in-date', function () {
 
