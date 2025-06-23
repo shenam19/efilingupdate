@@ -32,8 +32,8 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Build Vite assets
-        run: npm run build
+      # - name: Build Vite assets
+      #   run: npm run build
 
       - name: Prepare Laravel
         run: |
