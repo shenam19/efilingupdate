@@ -41,7 +41,7 @@ jobs:
           php artisan key:generate
 
       - name: Generate code coverage report
-        run: ./vendor/bin/pest --coverage --coverage-clover=coverage.xml
+        run: ./vendor/bin/phpunit --coverage --coverage-clover=coverage.xml
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
