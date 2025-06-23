@@ -1,0 +1,146 @@
+
+p__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_13_105910_create_messages_table.php_16_35e
+[/Users/shenam/efilingupdate/database/migrations/2021_12_13_105910_create_messages_table.php# (+"1*S
+2-
++2021_12_13_105910_create_messages_table.php"
+ (	
+implicit return*õ
+1 (j
+h
+# (+
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idpn
+ (*
+%2*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	thread_id2	foreignid@>
+ (6
+%3*"
+
+__unknown_file (
+
+%22nullablelj
+ (N
+%4*"
+
+__unknown_file (
+
+%3*'
+
+__unknown_file (	
+threads2constrainedlj
+ (&
+%5*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+is_user2booleanec
+ (5
+%6*"
+
+__unknown_file (
+
+%5*$
+
+__unknown_file (
+true2defaultnl
+ ((
+%7*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+user_id2	foreignid@>
+ (4
+%8*"
+
+__unknown_file (
+
+%72nullablejh
+ (J
+%9*"
+
+__unknown_file (
+
+%8*%
+
+__unknown_file (	
+users2constrainedrp
+ (+
+%10*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+contact_id2	foreignidB@
+ (7
+%11*#
+
+__unknown_file (
+
+%102nullableom
+ (P
+%12*#
+
+__unknown_file (
+
+%11*(
+
+__unknown_file (
+
+contacts2constrainedjh
+ (#
+%13*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+remarks2textB@
+ (/
+%14*#
+
+__unknown_file (
+
+%132nullableGE
+ ( 
+%15*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+- (=.
+$table$illuminate\database\schema\blueprintB
+createmessagestableH

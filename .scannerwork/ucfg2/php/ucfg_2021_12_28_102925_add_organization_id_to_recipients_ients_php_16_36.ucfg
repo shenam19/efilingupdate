@@ -1,0 +1,44 @@
+
+|__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_28_102925_add_organization_id_to_recipients.php_16_36q
+g/Users/shenam/efilingupdate/database/migrations/2021_12_28_102925_add_organization_id_to_recipients.php$ (,"1*_
+29
+72021_12_28_102925_add_organization_id_to_recipients.php"
+ (	
+implicit return*·
+1 (fj
+h
+$ (,
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintvt
+ (0
+%1*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+organization_id2	foreignid@>
+ (<
+%2*"
+
+__unknown_file (
+
+%12nullable}{
+ (e
+%3*"
+
+__unknown_file (
+
+%2*8
+
+__unknown_file (
+organization_hierarchies2constrained*
+2::
+. (>.
+$table$illuminate\database\schema\blueprintB!
+addorganizationidtorecipientsH

@@ -1,0 +1,29 @@
+
+v__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_03_28_155357_add_index_to_messages_table.php_29_34k
+a/Users/shenam/efilingupdate/database/migrations/2022_03_28_155357_add_index_to_messages_table.php" (*"1*Y
+23
+12022_03_28_155357_add_index_to_messages_table.php"
+ (	
+implicit return*ý
+1 (8j
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint}{
+ (7
+%1*&
+
+__unknown_file (
+
+
+$table*6
+
+__unknown_file (
+messages_subject_index2	dropindex*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB
+addindextomessagestableH

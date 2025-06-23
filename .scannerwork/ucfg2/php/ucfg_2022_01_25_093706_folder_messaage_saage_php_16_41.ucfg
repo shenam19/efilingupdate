@@ -1,0 +1,76 @@
+
+j__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_25_093706_folder_messaage.php_16_41_
+U/Users/shenam/efilingupdate/database/migrations/2022_01_25_093706_folder_messaage.php) (1"1*M
+2'
+%2022_01_25_093706_folder_messaage.php"
+ (	
+implicit return*ê
+1 (;j
+h
+) (1
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintqo
+ (+
+%1*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+message_id2	foreignidCA
+ (:
+%2*"
+
+__unknown_file (
+
+%12constrainedpn
+ (*
+%3*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	folder_id2	foreignidCA
+ (9
+%4*"
+
+__unknown_file (
+
+%32constrainednl
+ ((
+%5*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+user_id2	foreignidCA
+ (7
+%6*"
+
+__unknown_file (
+
+%52constrainedFD
+ ( 
+%7*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+3 (C.
+$table$illuminate\database\schema\blueprintB
+foldermessaageH

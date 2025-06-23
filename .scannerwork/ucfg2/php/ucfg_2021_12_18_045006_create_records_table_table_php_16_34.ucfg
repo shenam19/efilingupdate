@@ -1,0 +1,152 @@
+
+o__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_18_045006_create_records_table.php_16_34d
+Z/Users/shenam/efilingupdate/database/migrations/2021_12_18_045006_create_records_table.php" (*"1*R
+2,
+*2021_12_18_045006_create_records_table.php"
+ (	
+implicit return*¦
+1 (j
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idqo
+ (+
+%2*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+message_id2	foreignidmk
+ (D
+%3*"
+
+__unknown_file (
+
+%2*(
+
+__unknown_file (
+
+messages2constrainedus
+ (/
+%4*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+dispatched_date2datetime@>
+ (;
+%5*"
+
+__unknown_file (
+
+%42nullablesq
+ (-
+%6*&
+
+__unknown_file (
+
+
+$table*-
+
+__unknown_file (
+received_date2datetime@>
+ (9
+%7*"
+
+__unknown_file (
+
+%62nullabelom
+ ()
+%8*&
+
+__unknown_file (
+
+
+$table*+
+
+__unknown_file (
+fiscal_year2string@>
+ (5
+%9*"
+
+__unknown_file (
+
+%82nullablerp
+ (+
+%10*&
+
+__unknown_file (
+
+
+$table*-
+
+__unknown_file (
+outgoing_word2stringB@
+ (7
+%11*#
+
+__unknown_file (
+
+%102nullableig
+ ("
+%12*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+mode2stringB@
+ (.
+%13*#
+
+__unknown_file (
+
+%122nullablemk
+ (&
+%14*&
+
+__unknown_file (
+
+
+$table*(
+
+__unknown_file (
+
+language2stringB@
+ (2
+%15*#
+
+__unknown_file (
+
+%142nullableGE
+ ( 
+%16*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB
+createrecordstableH

@@ -1,0 +1,216 @@
+
+m__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_20_045718_create_media_table.php_11_32b
+X/Users/shenam/efilingupdate/database/migrations/2021_12_20_045718_create_media_table.php  (("1*P
+2*
+(2021_12_20_045718_create_media_table.php"
+ (	
+implicit return*Ó
+1 ((j
+h
+  ((
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintmk
+ ('
+%1*&
+
+__unknown_file (
+
+
+$table*"
+
+__unknown_file (
+id2bigincrementsig
+ (#
+%2*&
+
+__unknown_file (
+
+
+$table*%
+
+__unknown_file (	
+model2morphsfd
+ ( 
+%3*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+uuid2uuid@>
+ (,
+%4*"
+
+__unknown_file (
+
+%32nullable><
+ (6
+%5*"
+
+__unknown_file (
+
+%42uniquesq
+ (-
+%6*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+collection_name2stringŒ‰
+ ('
+%7*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+name*!
+
+__unknown_file (2€2string‘Ž
+ (,
+%8*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	file_name*!
+
+__unknown_file (2€2stringmk
+ ('
+%9*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	mime_type2stringA?
+ (3
+%10*"
+
+__unknown_file (
+
+%92nullableig
+ ("
+%11*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+disk2stringus
+ (.
+%12*&
+
+__unknown_file (
+
+
+$table*0
+
+__unknown_file (
+conversions_disk2stringB@
+ (:
+%13*#
+
+__unknown_file (
+
+%122nullableus
+ (.
+%14*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+size2unsignedbigintegerpn
+ ()
+%15*&
+
+__unknown_file (
+
+
+$table*-
+
+__unknown_file (
+manipulations2jsontr
+ (-
+%16*&
+
+__unknown_file (
+
+
+$table*1
+
+__unknown_file (
+custom_properties2jsonxv
+ (1
+%17*&
+
+__unknown_file (
+
+
+$table*5
+
+__unknown_file (
+generated_conversions2jsontr
+ (-
+%18*&
+
+__unknown_file (
+
+
+$table*1
+
+__unknown_file (
+responsive_images2jsonzx
+ (3
+%19*&
+
+__unknown_file (
+
+
+$table*,
+
+__unknown_file (
+order_column2unsignedintegerB@
+ (?
+%20*#
+
+__unknown_file (
+
+%192nullable?=
+ (H
+%21*#
+
+__unknown_file (
+
+%202indexOM
+ ((
+%22*&
+
+__unknown_file (
+
+
+$table2nullabletimestamps*
+2::
+* (:.
+$table$illuminate\database\schema\blueprintB
+createmediatableH

@@ -1,0 +1,94 @@
+
+@tests\unit\models\messagemodeltest::test_message_belongs_to_userL
+B/Users/shenam/efilingupdate/tests/Unit/Models/MessageModelTest.php (0"1*<
+2
+MessageModelTest.php"
+$ $(
+implicit return*¼
+1 (C¶
+³
+ (9
+%1"app\models\user::where*/
+
+__unknown_file ("
+app\models\user*$
+
+__unknown_file (
+name*2
+
+__unknown_file (
+Front Desk of TPiE=;
+ (B
+%2*"
+
+__unknown_file (
+
+%12first?
+=
+ (B
+$user"__id*"
+
+__unknown_file (
+
+%2,*
+ ( 
+
+$message"app\models\message]
+[
+ ( 
+%3"app\models\message::__construct*(
+
+__unknown_file (
+
+
+$messageG
+E
+! !(%
+%4"__id*-
+
+__unknown_file (*
+
+$user"
+idO
+M
+! !(%
+
+
+$message"	
+user_id"__id*"
+
+__unknown_file (
+
+%4O
+M
+# #(-
+%5"__id*5
+
+__unknown_file (*
+
+
+$message"	
+user_idG
+E
+#/ #(8
+%6"__id*-
+
+__unknown_file (*
+
+$user"
+id­ª
+# #(9
+%7*B
+
+__unknown_file (&$
+"tests\unit\models\messagemodeltest*"
+
+__unknown_file (
+
+%5*"
+
+__unknown_file (
+
+%62assertequals*
+2B&$
+"tests\unit\models\messagemodeltestH

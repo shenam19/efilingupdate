@@ -1,0 +1,55 @@
+
+z__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2014_10_11_065024_create_organization_types_table.php_16_45o
+e/Users/shenam/efilingupdate/database/migrations/2014_10_11_065024_create_organization_types_table.php- (5"1*]
+27
+52014_10_11_065024_create_organization_types_table.php"
+ (	
+implicit return*à
+1 (j
+h
+- (5
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idnl
+ ((
+%2*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+name_short2stringhf
+ ("
+%3*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+name2stringFD
+ ( 
+%4*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+7 (G.
+$table$illuminate\database\schema\blueprintB 
+createorganizationtypestableH

@@ -1,0 +1,68 @@
+
+\__sonar_lambda_/Users/shenam/efilingupdate/app/Http/Controllers/PullBackController.php_43_26Q
+G/Users/shenam/efilingupdate/app/Http/Controllers/PullBackController.php+ +(""1*>
+2
+PullBackController.php"
+. .(	
+implicit return*‘
+1, ,(VK
+I
+, ,()
+%1"__id*1
+
+__unknown_file (*
+
+$front"
+labelR
+P
+,0 ,(D
+%2"__id*8
+
+__unknown_file (*
+
+$front"
+organizationL
+J
+,0 ,(P
+%3"__id*2
+
+__unknown_file (*
+
+%2"
+
+name_shortm
+k
+, ,(U
+%4"__concat*
+, ,()
+
+%1*
+,* ,(/
+ ( *
+,0 ,(P
+
+%3*
+,Q ,(U
+ )K
+I
+, ,(U
+
+$front"
+label"__id*"
+
+__unknown_file (
+
+%4R
+P
+- -(%
+
+$front"
+
+isDisabled"__id*$
+
+__unknown_file (
+true*
+2:
++$ +(*
+$frontB+)
+'app\http\controllers\pullbackcontrollerH

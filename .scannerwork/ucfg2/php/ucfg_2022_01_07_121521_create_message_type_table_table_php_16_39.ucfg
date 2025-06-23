@@ -1,0 +1,107 @@
+
+t__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_07_121521_create_message_type_table.php_16_39i
+_/Users/shenam/efilingupdate/database/migrations/2022_01_07_121521_create_message_type_table.php' (/"1*W
+21
+/2022_01_07_121521_create_message_type_table.php"
+ (	
+implicit return*Ü
+1 (j
+h
+' (/
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idpn
+ (*
+%2*&
+
+__unknown_file (
+
+
+$table*,
+
+__unknown_file (
+name_english2string@>
+ (6
+%3*"
+
+__unknown_file (
+
+%22nullablepn
+ (*
+%4*&
+
+__unknown_file (
+
+
+$table*,
+
+__unknown_file (
+name_tibetan2string@>
+ (6
+%5*"
+
+__unknown_file (
+
+%42nullableom
+ ()
+%6*&
+
+__unknown_file (
+
+
+$table*+
+
+__unknown_file (
+description2string@>
+ (5
+%7*"
+
+__unknown_file (
+
+%62nullablevt
+ (0
+%8*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+organization_id2	foreignid@>
+ (<
+%9*"
+
+__unknown_file (
+
+%82nullable~|
+ (e
+%10*"
+
+__unknown_file (
+
+%9*8
+
+__unknown_file (
+organization_hierarchies2constrainedGE
+ ( 
+%11*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+1 (A.
+$table$illuminate\database\schema\blueprintB
+createmessagetypetableH

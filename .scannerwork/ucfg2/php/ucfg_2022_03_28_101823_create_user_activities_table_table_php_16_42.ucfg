@@ -1,0 +1,77 @@
+
+w__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_03_28_101823_create_user_activities_table.php_16_42l
+b/Users/shenam/efilingupdate/database/migrations/2022_03_28_101823_create_user_activities_table.php* (2"1*Z
+24
+22022_03_28_101823_create_user_activities_table.php"
+ (	
+implicit return*ä
+1 (j
+h
+* (2
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idlj
+ (&
+%2*&
+
+__unknown_file (
+
+
+$table*(
+
+__unknown_file (
+
+activity2stringnl
+ ((
+%3*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+user_id2	foreignidjh
+ (>
+%4*"
+
+__unknown_file (
+
+%3*%
+
+__unknown_file (	
+users2constrained‘Ž
+ (,
+%5*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+ip_address* 
+
+__unknown_file (2-2stringFD
+ ( 
+%6*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+4 (D.
+$table$illuminate\database\schema\blueprintB
+createuseractivitiestableH

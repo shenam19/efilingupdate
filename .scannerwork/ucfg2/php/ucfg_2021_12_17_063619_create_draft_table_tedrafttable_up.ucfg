@@ -1,0 +1,31 @@
+
+createdrafttable::upb
+X/Users/shenam/efilingupdate/database/migrations/2021_12_17_063619_create_draft_table.php ("1*P
+2*
+(2021_12_17_063619_create_draft_table.php"
+ (
+implicit return*õ
+1 (∂
+≥
+! (	
+%1"__declareFunction*ç
+
+__unknown_file (qo
+m__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_17_063619_create_draft_table.php_16_33Õ
+ 
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*&
+
+__unknown_file (
+
+drafts*"
+
+__unknown_file (
+
+%1*
+2B
+createdrafttableH

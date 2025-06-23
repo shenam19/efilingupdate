@@ -1,0 +1,19 @@
+
+createthreadstable::downd
+Z/Users/shenam/efilingupdate/database/migrations/2021_12_13_105822_create_threads_table.php ("1*R
+2,
+*2021_12_13_105822_create_threads_table.php"
+ (
+implicit return*Å
+1 ((°
+­
+ ('
+%1"/illuminate\support\facades\schema::dropifexists*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*'
+
+__unknown_file (	
+threads*
+2B
+createthreadstableH

@@ -1,0 +1,420 @@
+
+ytests\unit\controllers\organizationstructurecontrollertest::test_editing_organization_to_different_org_than_user_works_ind
+Z/Users/shenam/efilingupdate/tests/Unit/Controllers/OrganizationStructureControllerTest.php\ \(Q"1*O
+2)
+'OrganizationStructureControllerTest.php"
+{ {(
+implicit return*Ò&
+1^ ^(MÌ
+É
+^ ^(C
+%1"'app\models\organizationhierarchy::where*@
+
+__unknown_file ($""
+ app\models\organizationhierarchy*$
+
+__unknown_file (
+name*&
+
+__unknown_file (
+
+Kashag=;
+^ ^(L
+%2*"
+
+__unknown_file (
+
+%12firstD
+B
+^ ^(L
+
+$KashagOrg"__id*"
+
+__unknown_file (
+
+%2¸
+µ
+_ _(A
+%3"app\models\user::where*/
+
+__unknown_file ("
+app\models\user*$
+
+__unknown_file (
+name*4
+
+__unknown_file (
+Front Desk of Kashag=;
+_ _(J
+%4*"
+
+__unknown_file (
+
+%32firstE
+C
+_ _(J
+$kashagUser"__id*"
+
+__unknown_file (
+
+%4¶
+³
+` `(=
+%5"app\models\user::where*/
+
+__unknown_file ("
+app\models\user*$
+
+__unknown_file (
+name*2
+
+__unknown_file (
+Front Desk of TSJC=;
+` `(F
+%6*"
+
+__unknown_file (
+
+%52firstC
+A
+` `(F
+	$tsjcUser"__id*"
+
+__unknown_file (
+
+%6L
+J
+a a(-
+%7"__id*2
+
+__unknown_file (*
+
+
+$KashagOrg"
+idQ
+O
+a/ a(B
+%8"__id*7
+
+__unknown_file (*
+
+	$tsjcUser"
+
+works_atÈÅ
+a a(C
+%9*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*"
+
+__unknown_file (
+
+%7*"
+
+__unknown_file (
+
+%82assertnotequals§¤
+c c(1
+%10*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*+
+
+__unknown_file (
+
+$kashagUser2actingas
+cV g(	
+%11"$Array›
+˜
+cV g(	
+%12"__mapSet*#
+
+__unknown_file (
+
+%11**
+
+__unknown_file (
+
+name_short**
+
+__unknown_file (
+
+Kashag Org•
+’
+cV g(	
+%13"__mapSet*#
+
+__unknown_file (
+
+%11*$
+
+__unknown_file (
+name**
+
+__unknown_file (
+
+Kashag OrgM
+K
+f f("
+%14"__id*2
+
+__unknown_file (*
+
+
+$KashagOrg"
+idŒ
+‰
+cV g(	
+%15"__mapSet*#
+
+__unknown_file (
+
+%11*"
+
+__unknown_file (
+id*#
+
+__unknown_file (
+
+%14 
+c g(
+
+%16*#
+
+__unknown_file (
+
+%10*:
+
+__unknown_file (
+organization-structure/add*#
+
+__unknown_file (
+
+%112postE
+C
+c g(
+
+
+$response1"__id*#
+
+__unknown_file (
+
+%16Ñ
+Î
+i i(H
+%17"'app\models\organizationhierarchy::where*@
+
+__unknown_file ($""
+ app\models\organizationhierarchy*$
+
+__unknown_file (
+name**
+
+__unknown_file (
+
+Kashag Org?=
+i i(Q
+%18*#
+
+__unknown_file (
+
+%172firstF
+D
+i i(Q
+$createdOrg"__id*#
+
+__unknown_file (
+
+%18¬©
+k k()
+%19*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*+
+
+__unknown_file (
+
+$createdOrg2assertnotnull¥¢
+m m(.
+%20*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*)
+
+__unknown_file (
+
+	$tsjcUser2actingas
+mT q(	
+%21"$ArrayN
+L
+n n(#
+%22"__id*3
+
+__unknown_file (*
+
+$createdOrg"
+idŒ
+‰
+mT q(	
+%23"__mapSet*#
+
+__unknown_file (
+
+%21*"
+
+__unknown_file (
+id*#
+
+__unknown_file (
+
+%22“
+
+mT q(	
+%24"__mapSet*#
+
+__unknown_file (
+
+%21*$
+
+__unknown_file (
+name*(
+
+__unknown_file (
+
+Tsjc Org™
+–
+mT q(	
+%25"__mapSet*#
+
+__unknown_file (
+
+%21**
+
+__unknown_file (
+
+name_short*(
+
+__unknown_file (
+
+Tsjc Org¡ž
+m q(
+
+%26*#
+
+__unknown_file (
+
+%20*;
+
+__unknown_file (
+organization-structure/edit*#
+
+__unknown_file (
+
+%212postD
+B
+m q(
+
+	$response"__id*#
+
+__unknown_file (
+
+%26om
+s s($
+%27*)
+
+__unknown_file (
+
+	$response*!
+
+__unknown_file (2“2assertstatus
+uA z(	
+%28"$ArrayN
+L
+v v(#
+%29"__id*3
+
+__unknown_file (*
+
+$createdOrg"
+idŒ
+‰
+uA z(	
+%30"__mapSet*#
+
+__unknown_file (
+
+%28*"
+
+__unknown_file (
+id*#
+
+__unknown_file (
+
+%29“
+
+uA z(	
+%31"__mapSet*#
+
+__unknown_file (
+
+%28*$
+
+__unknown_file (
+name*(
+
+__unknown_file (
+
+Tsjc Org™
+–
+uA z(	
+%32"__mapSet*#
+
+__unknown_file (
+
+%28**
+
+__unknown_file (
+
+name_short*(
+
+__unknown_file (
+
+Tsjc OrgM
+K
+y y(-
+%33"__id*2
+
+__unknown_file (*
+
+
+$KashagOrg"
+id—
+”
+uA z(	
+%34"__mapSet*#
+
+__unknown_file (
+
+%28*-
+
+__unknown_file (
+belongs_to_id*#
+
+__unknown_file (
+
+%33æã
+u z(
+
+%35*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*8
+
+__unknown_file (
+organization_hierarchies*#
+
+__unknown_file (
+
+%282assertdatabasemissing*
+2B><
+:tests\unit\controllers\organizationstructurecontrollertestH

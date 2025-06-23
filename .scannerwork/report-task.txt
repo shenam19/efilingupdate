@@ -1,0 +1,8 @@
+organization=shenam19
+projectKey=shenam19_myapp
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.64638
+branch=main
+dashboardUrl=https://sonarcloud.io/dashboard?id=shenam19_myapp&branch=main
+ceTaskId=AZeM-870t66BVnqFZHcK
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZeM-870t66BVnqFZHcK

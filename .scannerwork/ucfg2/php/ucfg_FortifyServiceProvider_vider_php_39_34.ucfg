@@ -1,0 +1,78 @@
+
+Y__sonar_lambda_/Users/shenam/efilingupdate/app/Providers/FortifyServiceProvider.php_39_34N
+D/Users/shenam/efilingupdate/app/Providers/FortifyServiceProvider.php'" '(*"1*
+1( ((. 
+
+'" '(*
+%1"__entrypoint¼¹
+'" '(*#
+$requestilluminate\http\request".illuminate\http\request::__sonar_inject_symbol*A
+
+__unknown_file (%
+#
+$requestilluminate\http\request2__sonar_inject_symbola
+_
+'" '(*
+
+$request"__id*A
+
+__unknown_file (%
+#
+$requestilluminate\http\requestM
+K
+( ((-
+%2"__id*3
+
+__unknown_file (*
+
+
+$request"
+emailN
+L
+( ((-
+$email"__passthrough_cast*"
+
+__unknown_file (
+
+%2ª
+§
+* *(&
+%3".illuminate\cache\ratelimiting\limit::perminute*C
+
+__unknown_file ('"%
+#illuminate\cache\ratelimiting\limit* 
+
+__unknown_file (2@>
+*2 *(@
+%4*(
+
+__unknown_file (
+
+
+$request2ipH
+F
+*+ *(@
+%5"__concat*
+*+ *(1
+
+
+$email*
+*2 *(@
+
+%4^\
+* *(A
+%6*"
+
+__unknown_file (
+
+%3*"
+
+__unknown_file (
+
+%52by"
+* *(B
+
+%6:/
+', '(<#
+$requestilluminate\http\requestB(&
+$app\providers\fortifyserviceproviderH

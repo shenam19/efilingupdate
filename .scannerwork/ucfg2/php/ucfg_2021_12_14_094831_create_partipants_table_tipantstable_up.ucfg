@@ -1,0 +1,30 @@
+
+createpartipantstable::upg
+]/Users/shenam/efilingupdate/database/migrations/2021_12_14_094831_create_partipants_table.php ("1*U
+2/
+-2021_12_14_094831_create_partipants_table.php"
+ (
+implicit return*¦
+1 (»
+¸
+' (	
+%1"__declareFunction*’
+
+__unknown_file (vt
+r__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_14_094831_create_partipants_table.php_16_39Ó
+Ğ
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*,
+
+__unknown_file (
+participants*"
+
+__unknown_file (
+
+%1*
+2B
+createpartipantstableH

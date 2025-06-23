@@ -1,0 +1,31 @@
+
+p__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_15_060255_add_status_to_message.php_28_34e
+[/Users/shenam/efilingupdate/database/migrations/2021_12_15_060255_add_status_to_message.php" (*"1*S
+2-
++2021_12_15_060255_add_status_to_message.php"
+ (	
+implicit return*î
+1 ()j
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintnl
+ ((
+%1*&
+
+__unknown_file (
+
+
+$table*&
+
+__unknown_file (
+
+status2
+dropcolumn*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB
+addstatustomessageH

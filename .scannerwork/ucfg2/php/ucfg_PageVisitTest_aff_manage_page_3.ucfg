@@ -1,0 +1,126 @@
+
+Gtests\feature\pagevisittest::test_staff_can_not_visit_staff_manage_pageE
+;/Users/shenam/efilingupdate/tests/Feature/PageVisitTest.phpt t(>"1*;
+2
+PageVisitTest.php"!
+
+‚ ‚(
+implicit return*¤
+
+1v v(*]
+[
+v v(
+%1"app\models\user::factory*/
+
+__unknown_file ("
+app\models\user><
+v v()
+%2*"
+
+__unknown_file (
+
+%12create?
+=
+v v()
+$user"__id*"
+
+__unknown_file (
+
+%2lj
+x x("
+%3*%
+
+__unknown_file (	
+
+$user*%
+
+__unknown_file (	
+staff2
+assignrole
+z* }(	
+%4"$ArrayJ
+H
+{ {(#
+%5"__id*0
+
+__unknown_file (*
+
+$user"
+emailŒ
+‰
+z* }(	
+%6"__mapSet*"
+
+__unknown_file (
+
+%4*%
+
+__unknown_file (	
+email*"
+
+__unknown_file (
+
+%5•
+’
+z* }(	
+%7"__mapSet*"
+
+__unknown_file (
+
+%4*(
+
+__unknown_file (
+
+password*(
+
+__unknown_file (
+
+password¢Ÿ
+z }(
+
+%8*;
+
+__unknown_file (
+tests\feature\pagevisittest*&
+
+__unknown_file (
+
+/login*"
+
+__unknown_file (
+
+%42postC
+A
+z }(
+
+	$response"__id*"
+
+__unknown_file (
+
+%8
+ (;
+%9*;
+
+__unknown_file (
+tests\feature\pagevisittest*9
+
+__unknown_file (
+/manage-staff/listMyStaff2getC
+A
+ (;
+	$response"__id*"
+
+__unknown_file (
+
+%9qo
+
+ ($
+%10*)
+
+__unknown_file (
+
+	$response*!
+
+__unknown_file (2“2assertstatus*
+2B
+tests\feature\pagevisittestH

@@ -1,0 +1,67 @@
+
+Z__sonar_lambda_/Users/shenam/efilingupdate/app/Http/Controllers/RecordController.php_54_26O
+E/Users/shenam/efilingupdate/app/Http/Controllers/RecordController.php6 6(""1*<
+2
+RecordController.php"
+9 9(	
+implicit return*”
+17 7(\K
+I
+7 7()
+%1"__id*1
+
+__unknown_file (*
+
+$front"
+labelR
+P
+74 7(H
+%2"__id*8
+
+__unknown_file (*
+
+$front"
+organizationL
+J
+74 7(T
+%3"__id*2
+
+__unknown_file (*
+
+%2"
+
+name_shortm
+k
+7 7([
+%4"__concat*
+7 7()
+
+%1*
+7, 7(1
+ ( *
+74 7(T
+
+%3*
+7W 7([
+ )K
+I
+7 7([
+
+$front"
+label"__id*"
+
+__unknown_file (
+
+%4U
+S
+8 8((
+
+$front"
+is_colleague"__id*%
+
+__unknown_file (	
+false*
+2:
+6$ 6(*
+$frontB)'
+%app\http\controllers\recordcontrollerH

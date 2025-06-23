@@ -1,0 +1,100 @@
+
+s__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2019_08_19_000000_create_failed_jobs_table.php_16_38h
+^/Users/shenam/efilingupdate/database/migrations/2019_08_19_000000_create_failed_jobs_table.php& (."1*V
+20
+.2019_08_19_000000_create_failed_jobs_table.php"
+ (	
+implicit return*Õ
+1 (j
+h
+& (.
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idhf
+ ("
+%2*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+uuid2string><
+ (,
+%3*"
+
+__unknown_file (
+
+%22uniquelj
+ (&
+%4*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+connection2textge
+ (!
+%5*&
+
+__unknown_file (
+
+
+$table*%
+
+__unknown_file (	
+queue2textmk
+ ('
+%6*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+payload2longtextom
+ ()
+%7*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	exception2longtextpn
+ (*
+%8*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	failed_at2	timestampB@
+ (8
+%9*"
+
+__unknown_file (
+
+%82
+usecurrent*
+2::
+0 (@.
+$table$illuminate\database\schema\blueprintB
+createfailedjobstableH

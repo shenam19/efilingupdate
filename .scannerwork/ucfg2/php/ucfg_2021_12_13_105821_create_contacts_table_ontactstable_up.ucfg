@@ -1,0 +1,31 @@
+
+createcontactstable::upe
+[/Users/shenam/efilingupdate/database/migrations/2021_12_13_105821_create_contacts_table.php ("1*S
+2-
++2021_12_13_105821_create_contacts_table.php"
+ (
+implicit return*†
+1 (π
+∂
+# (	
+%1"__declareFunction*ê
+
+__unknown_file (tr
+p__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_13_105821_create_contacts_table.php_16_35œ
+Ã
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*(
+
+__unknown_file (
+
+contacts*"
+
+__unknown_file (
+
+%1*
+2B
+createcontactstableH

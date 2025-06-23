@@ -1,0 +1,31 @@
+
+u__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_28_034734_add_forward_id_to_messages.php_28_34j
+`/Users/shenam/efilingupdate/database/migrations/2021_12_28_034734_add_forward_id_to_messages.php" (*"1*X
+22
+02021_12_28_034734_add_forward_id_to_messages.php"
+ (	
+implicit return*ò
+1 (-j
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintrp
+ (,
+%1*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+forward_id2
+dropcolumn*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB
+addforwardidtomessagesH

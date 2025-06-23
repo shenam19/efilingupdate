@@ -1,0 +1,30 @@
+
+createfailedjobstable::uph
+^/Users/shenam/efilingupdate/database/migrations/2019_08_19_000000_create_failed_jobs_table.php ("1*V
+20
+.2019_08_19_000000_create_failed_jobs_table.php"
+ (
+implicit return*¦
+1 (¼
+¹
+& (	
+%1"__declareFunction*“
+
+__unknown_file (wu
+s__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2019_08_19_000000_create_failed_jobs_table.php_16_38Ò
+Ï
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*+
+
+__unknown_file (
+failed_jobs*"
+
+__unknown_file (
+
+%1*
+2B
+createfailedjobstableH

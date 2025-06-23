@@ -1,0 +1,30 @@
+
+u__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_02_03_161241_add_outgoing_no_to_records.php_29_33j
+`/Users/shenam/efilingupdate/database/migrations/2022_02_03_161241_add_outgoing_no_to_records.php! ()"1*X
+22
+02022_02_03_161241_add_outgoing_no_to_records.php"
+   (	
+implicit return*ó
+1 (.j
+h
+! ()
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintsq
+ (-
+%1*&
+
+__unknown_file (
+
+
+$table*+
+
+__unknown_file (
+outgoing_no2
+dropcolumn*
+2::
++ (;.
+$table$illuminate\database\schema\blueprintB
+addoutgoingnotorecordsH

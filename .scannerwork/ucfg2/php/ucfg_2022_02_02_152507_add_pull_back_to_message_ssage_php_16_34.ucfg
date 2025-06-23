@@ -1,0 +1,45 @@
+
+s__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_02_02_152507_add_pull_back_to_message.php_16_34h
+^/Users/shenam/efilingupdate/database/migrations/2022_02_02_152507_add_pull_back_to_message.php" (*"1*V
+20
+.2022_02_02_152507_add_pull_back_to_message.php"
+ (	
+implicit return*¤
+1 (Sj
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintsq
+ (-
+%1*&
+
+__unknown_file (
+
+
+$table*,
+
+__unknown_file (
+pull_back_id2	foreignid@>
+ (9
+%2*"
+
+__unknown_file (
+
+%12nullablemk
+ (R
+%3*"
+
+__unknown_file (
+
+%2*(
+
+__unknown_file (
+
+messages2constrained*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB
+addpullbacktomessageH

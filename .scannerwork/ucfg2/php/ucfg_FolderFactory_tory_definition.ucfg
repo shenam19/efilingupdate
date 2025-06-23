@@ -1,0 +1,119 @@
+
+,database\factories\folderfactory::definitionJ
+@/Users/shenam/efilingupdate/database/factories/FolderFactory.php ("1*š
+
+1 (
+
+ (	
+%1"$Arraye
+c
+ (%
+%2"__id*K
+
+__unknown_file (/*-"
+ database\factories\folderfactory"
+fakerCA
+ (4
+%3*"
+
+__unknown_file (
+
+%22randomdigitŽ
+‹
+ (	
+%4"__mapSet*"
+
+__unknown_file (
+
+%1*'
+
+__unknown_file (	
+file_no*"
+
+__unknown_file (
+
+%3e
+c
+ ("
+%5"__id*K
+
+__unknown_file (/*-"
+ database\factories\folderfactory"
+faker<:
+ (*
+%6*"
+
+__unknown_file (
+
+%52word‹
+ˆ
+ (	
+%7"__mapSet*"
+
+__unknown_file (
+
+%1*$
+
+__unknown_file (
+name*"
+
+__unknown_file (
+
+%6”
+‘
+ (	
+%8"__mapSet*"
+
+__unknown_file (
+
+%1*/
+
+__unknown_file (
+organization_id* 
+
+__unknown_file (2e
+c
+ ()
+%9"__id*K
+
+__unknown_file (/*-"
+ database\factories\folderfactory"
+faker=;
+ (1
+%10*"
+
+__unknown_file (
+
+%92date”
+‘
+ (	
+%11"__mapSet*"
+
+__unknown_file (
+
+%1*+
+
+__unknown_file (
+date_opened*#
+
+__unknown_file (
+
+%10–
+“
+ (	
+%12"__mapSet*"
+
+__unknown_file (
+
+%1*)
+
+__unknown_file (
+	file_type*'
+
+__unknown_file (	
+general"
+ (
+
+
+%1B$"
+ database\factories\folderfactoryH

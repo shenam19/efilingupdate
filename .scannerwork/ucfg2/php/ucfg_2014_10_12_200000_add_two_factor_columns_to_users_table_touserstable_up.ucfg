@@ -1,0 +1,30 @@
+
+#addtwofactorcolumnstouserstable::upu
+k/Users/shenam/efilingupdate/database/migrations/2014_10_12_200000_add_two_factor_columns_to_users_table.php ("1*c
+2=
+;2014_10_12_200000_add_two_factor_columns_to_users_table.php"
+ (
+implicit return*¯
+1 (Ì
+É
+ (	
+%1"__declareFunction*£
+
+__unknown_file (†ƒ
+€__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2014_10_12_200000_add_two_factor_columns_to_users_table.php_16_31Ë
+È
+ (
+
+%2"(illuminate\support\facades\schema::table*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*%
+
+__unknown_file (	
+users*"
+
+__unknown_file (
+
+%1*
+2B#!
+addtwofactorcolumnstouserstableH

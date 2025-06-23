@@ -1,0 +1,63 @@
+
+$app\models\message::getsenderorgname>
+2/Users/shenam/efilingupdate/app/Models/Message.phpç ç($"1*◊
+2
+ë ë(3`
+^
+
+ë ë(&
+%2"__id*D
+
+__unknown_file ((*&
+app\models\message"
+organizationN
+L
+
+ë ë(2
+%3"__id*2
+
+__unknown_file (*
+
+%2"
+
+name_short"
+
+ë ë(3
+
+%3*“
+3
+ï ï(.a
+_
+
+ï ï('
+%4"__id*E
+
+__unknown_file ()*'
+app\models\message"
+contactSenderH
+F
+
+ï ï(-
+%5"__id*,
+
+__unknown_file (*
+
+%4"
+name"
+
+ï ï(.
+
+%5*t
+1
+è è([
+Y
+
+è è(
+%1"__id*?
+
+__unknown_file (#*!
+app\models\message"	
+is_user*
+2
+3B
+app\models\messageH

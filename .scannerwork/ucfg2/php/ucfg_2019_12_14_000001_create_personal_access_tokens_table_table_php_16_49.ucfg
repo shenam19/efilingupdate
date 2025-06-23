@@ -1,0 +1,107 @@
+
+~__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php_16_49s
+i/Users/shenam/efilingupdate/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php1 (9"1*a
+2;
+92019_12_14_000001_create_personal_access_tokens_table.php"
+ (	
+implicit return*Ä
+1 ((j
+h
+1 (9
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintmk
+ ('
+%1*&
+
+__unknown_file (
+
+
+$table*"
+
+__unknown_file (
+id2bigincrementsmk
+ ('
+%2*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	tokenable2morphshf
+ ("
+%3*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+name2stringŒ‰
+ ('
+%4*&
+
+__unknown_file (
+
+
+$table*%
+
+__unknown_file (	
+token* 
+
+__unknown_file (2@2string><
+ (1
+%5*"
+
+__unknown_file (
+
+%42uniqueki
+ (%
+%6*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	abilities2text@>
+ (1
+%7*"
+
+__unknown_file (
+
+%62nullablesq
+ (-
+%8*&
+
+__unknown_file (
+
+
+$table*,
+
+__unknown_file (
+last_used_at2	timestamp@>
+ (9
+%9*"
+
+__unknown_file (
+
+%82nullableGE
+ ( 
+%10*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+; (K.
+$table$illuminate\database\schema\blueprintB#!
+createpersonalaccesstokenstableH

@@ -1,0 +1,139 @@
+
+Qtests\feature\pagevisittest::test_staff_can_not_visit_organization_structure_pageG
+;/Users/shenam/efilingupdate/tests/Feature/PageVisitTest.phpÑ Ñ(H"1*;
+2
+PageVisitTest.php"!
+
+ë ë(
+implicit return*¬
+
+1
+Ü Ü(*_
+]
+
+Ü Ü(
+%1"app\models\user::factory*/
+
+__unknown_file ("
+app\models\user@>
+
+Ü Ü()
+%2*"
+
+__unknown_file (
+
+%12createA
+?
+
+Ü Ü()
+$user"__id*"
+
+__unknown_file (
+
+%2nl
+
+á á("
+%3*%
+
+__unknown_file (	
+
+$user*%
+
+__unknown_file (	
+staff2
+assignrole
+
+â* å(	
+%4"$ArrayL
+J
+
+ä ä(#
+%5"__id*0
+
+__unknown_file (*
+
+$user"
+emailé
+ã
+
+â* å(	
+%6"__mapSet*"
+
+__unknown_file (
+
+%4*%
+
+__unknown_file (	
+email*"
+
+__unknown_file (
+
+%5ó
+î
+
+â* å(	
+%7"__mapSet*"
+
+__unknown_file (
+
+%4*(
+
+__unknown_file (
+
+password*(
+
+__unknown_file (
+
+password§°
+
+â å(
+
+%8*;
+
+__unknown_file (
+tests\feature\pagevisittest*&
+
+__unknown_file (
+
+/login*"
+
+__unknown_file (
+
+%42postE
+C
+
+â å(
+
+	$response"__id*"
+
+__unknown_file (
+
+%8ñì
+
+é é(?
+%9*;
+
+__unknown_file (
+tests\feature\pagevisittest*=
+
+__unknown_file (!
+/organization-structure/index2getE
+C
+
+é é(?
+	$response"__id*"
+
+__unknown_file (
+
+%9qo
+
+ê ê($
+%10*)
+
+__unknown_file (
+
+	$response*!
+
+__unknown_file (2ì2assertstatus*
+2B
+tests\feature\pagevisittestH

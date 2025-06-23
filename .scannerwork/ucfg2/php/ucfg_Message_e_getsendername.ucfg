@@ -1,0 +1,62 @@
+
+!app\models\message::getsendername>
+2/Users/shenam/efilingupdate/app/Models/Message.php (!"1*Ë
+2
+… …('Z
+X
+
+… …( 
+%2"__id*>
+
+__unknown_file ("* 
+app\models\message"
+senderH
+F
+
+… …(&
+%3"__id*,
+
+__unknown_file (*
+
+%2"
+name"
+
+… …('
+
+%3*Ò
+3
+‰ ‰(.a
+_
+
+‰ ‰('
+%4"__id*E
+
+__unknown_file ()*'
+app\models\message"
+contactSenderH
+F
+
+‰ ‰(-
+%5"__id*,
+
+__unknown_file (*
+
+%4"
+name"
+
+‰ ‰(.
+
+%5*t
+1
+ƒ ƒ([
+Y
+
+ƒ ƒ(
+%1"__id*?
+
+__unknown_file (#*!
+app\models\message"	
+is_user*
+2
+3B
+app\models\messageH

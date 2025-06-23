@@ -1,0 +1,46 @@
+
+__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_07_122203_add_message_type_id_to_message_table.php_16_34t
+j/Users/shenam/efilingupdate/database/migrations/2022_01_07_122203_add_message_type_id_to_message_table.php" (*"1*b
+2<
+:2022_01_07_122203_add_message_type_id_to_message_table.php"
+ (	
+implicit return*Ì
+1 (Zj
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintvt
+ (0
+%1*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+message_type_id2	foreignida_
+ (<
+%2*"
+
+__unknown_file (
+
+%1* 
+
+__unknown_file (22defaultqo
+ (Y
+%3*"
+
+__unknown_file (
+
+%2*,
+
+__unknown_file (
+message_type2constrained*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB" 
+addmessagetypeidtomessagetableH

@@ -1,0 +1,60 @@
+
+s__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_20_045728_create_attachments_table.php_16_38h
+^/Users/shenam/efilingupdate/database/migrations/2021_12_20_045728_create_attachments_table.php& (."1*V
+20
+.2021_12_20_045728_create_attachments_table.php"
+ (	
+implicit return*½
+1 (Ej
+h
+& (.
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintqo
+ (+
+%1*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+message_id2	foreignidmk
+ (D
+%2*"
+
+__unknown_file (
+
+%1*(
+
+__unknown_file (
+
+messages2constrainedom
+ ()
+%3*&
+
+__unknown_file (
+
+
+$table*(
+
+__unknown_file (
+
+media_id2	foreignidjh
+ (?
+%4*"
+
+__unknown_file (
+
+%3*%
+
+__unknown_file (	
+media2constrained*
+2::
+0 (@.
+$table$illuminate\database\schema\blueprintB
+createattachmentstableH

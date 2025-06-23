@@ -1,0 +1,129 @@
+
+m__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2014_10_12_000000_create_users_table.php_16_32b
+X/Users/shenam/efilingupdate/database/migrations/2014_10_12_000000_create_users_table.php  (("1*P
+2*
+(2014_10_12_000000_create_users_table.php"
+ (	
+implicit return*®
+
+1 (j
+h
+  ((
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idhf
+ ("
+%2*&
+
+__unknown_file (
+
+
+$table*$
+
+__unknown_file (
+name2stringig
+ (#
+%3*&
+
+__unknown_file (
+
+
+$table*%
+
+__unknown_file (	
+email2string><
+ (-
+%4*"
+
+__unknown_file (
+
+%32uniquexv
+ (2
+%5*&
+
+__unknown_file (
+
+
+$table*1
+
+__unknown_file (
+email_verified_at2	timestamp@>
+ (>
+%6*"
+
+__unknown_file (
+
+%52nullablelj
+ (&
+%7*&
+
+__unknown_file (
+
+
+$table*(
+
+__unknown_file (
+
+password2stringIG
+ (#
+%8*&
+
+__unknown_file (
+
+
+$table2remembertokenvt
+ (0
+%9*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+current_team_id2	foreignidA?
+ (<
+%10*"
+
+__unknown_file (
+
+%92nullable›˜
+ (6
+%11*&
+
+__unknown_file (
+
+
+$table*2
+
+__unknown_file (
+profile_photo_path*!
+
+__unknown_file (2€2stringB@
+ (B
+%12*#
+
+__unknown_file (
+
+%112nullableGE
+ ( 
+%13*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+* (:.
+$table$illuminate\database\schema\blueprintB
+createuserstableH

@@ -1,0 +1,74 @@
+
+o__sonar_lambda_/Users/shenam/efilingupdate/resources/views/livewire/folder/partials/MessageController.php_60_26d
+Z/Users/shenam/efilingupdate/resources/views/livewire/folder/partials/MessageController.php< <(""1*=
+2
+MessageController.php"
+? ?(	
+implicit return*¸
+1= =(gO
+M
+=% =(6
+%1"__id*5
+
+__unknown_file (*
+
+
+$colleague"
+labelV
+T
+== =(U
+%2"__id*<
+
+__unknown_file ( *
+
+
+$colleague"
+organizationL
+J
+== =(a
+%3"__id*2
+
+__unknown_file (*
+
+%2"
+
+name_short
+
+=  =(f
+%4"__concat*
+=  =($
+* *
+=% =(6
+
+%1*
+=7 =(<
+ ( *
+== =(a
+
+%3*
+=b =(f
+ )O
+M
+= =(f
+
+
+$colleague"
+label"__id*"
+
+__unknown_file (
+
+%4X
+V
+> >(+
+
+
+$colleague"
+is_colleague"__id*$
+
+__unknown_file (
+true*
+2:
+<$ <(.
+
+$colleagueB*(
+&app\http\controllers\messagecontrollerH

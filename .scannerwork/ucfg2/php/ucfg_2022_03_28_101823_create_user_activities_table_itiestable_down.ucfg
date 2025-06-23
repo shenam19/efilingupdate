@@ -1,0 +1,19 @@
+
+createuseractivitiestable::downl
+b/Users/shenam/efilingupdate/database/migrations/2022_03_28_101823_create_user_activities_table.php ("1*Z
+24
+22022_03_28_101823_create_user_activities_table.php"
+! !(
+implicit return*Í
+1   (0¸
+µ
+   (/
+%1"/illuminate\support\facades\schema::dropifexists*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*/
+
+__unknown_file (
+user_activities*
+2B
+createuseractivitiestableH

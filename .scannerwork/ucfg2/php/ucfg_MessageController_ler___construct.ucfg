@@ -1,0 +1,63 @@
+
+3app\http\controllers\messagecontroller::__constructd
+Z/Users/shenam/efilingupdate/resources/views/livewire/folder/partials/MessageController.php ("1*=
+2
+MessageController.php"
+ (
+implicit return*À
+1 (*g
+e
+ (	
+$thread"__id*H
+
+__unknown_file (,
+*
+$threadapp\http\services\threadservicej
+h
+ (
+
+$message"__id*J
+
+__unknown_file (.
+,
+$message app\http\services\messageserviceg
+e
+ (	
+$record"__id*H
+
+__unknown_file (,
+*
+$recordapp\http\services\recordservicex
+v
+ ();(
+&app\http\controllers\messagecontroller"
+threadservice"__id*'
+
+__unknown_file (
+	
+$threadz
+x
+ (*<(
+&app\http\controllers\messagecontroller"
+messageservice"__id*(
+
+__unknown_file (
+
+
+$messagex
+v
+ ((;(
+&app\http\controllers\messagecontroller"
+recordservice"__id*'
+
+__unknown_file (
+	
+$record*
+2:6
+  (5*
+$threadapp\http\services\threadservice:8
+7 (N,
+$message app\http\services\messageservice:6
+P (e*
+$recordapp\http\services\recordserviceB*(
+&app\http\controllers\messagecontrollerH

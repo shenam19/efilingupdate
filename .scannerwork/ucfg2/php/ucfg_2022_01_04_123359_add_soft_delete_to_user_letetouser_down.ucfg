@@ -1,0 +1,30 @@
+
+addsoftdeletetouser::downg
+]/Users/shenam/efilingupdate/database/migrations/2022_01_04_123359_add_soft_delete_to_user.php ("1*U
+2/
+-2022_01_04_123359_add_soft_delete_to_user.php"
+ (
+implicit return*ž
+1 (»
+¸
+ (	
+%1"__declareFunction*’
+
+__unknown_file (vt
+r__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_04_123359_add_soft_delete_to_user.php_28_31Ë
+È
+ (
+
+%2"(illuminate\support\facades\schema::table*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*%
+
+__unknown_file (	
+users*"
+
+__unknown_file (
+
+%1*
+2B
+addsoftdeletetouserH

@@ -1,0 +1,19 @@
+
+%createpersonalaccesstokenstable::downs
+i/Users/shenam/efilingupdate/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php   ("1*a
+2;
+92019_12_14_000001_create_personal_access_tokens_table.php"
+# #(
+implicit return*Ô
+1" "(7¿
+¼
+" "(6
+%1"/illuminate\support\facades\schema::dropifexists*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*6
+
+__unknown_file (
+personal_access_tokens*
+2B#!
+createpersonalaccesstokenstableH

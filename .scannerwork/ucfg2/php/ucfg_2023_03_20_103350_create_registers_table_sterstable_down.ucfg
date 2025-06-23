@@ -1,0 +1,19 @@
+
+createregisterstable::downf
+\/Users/shenam/efilingupdate/database/migrations/2023_03_20_103350_create_registers_table.php ("1*T
+2.
+,2023_03_20_103350_create_registers_table.php"
+" "(
+implicit return*Ç
+1! !(*²
+¯
+! !()
+%1"/illuminate\support\facades\schema::dropifexists*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*)
+
+__unknown_file (
+	registers*
+2B
+createregisterstableH

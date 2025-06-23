@@ -1,0 +1,20 @@
+
+createsessionstable::downe
+[/Users/shenam/efilingupdate/database/migrations/2021_12_13_034834_create_sessions_table.php ("1*S
+2-
++2021_12_13_034834_create_sessions_table.php"
+" "(
+implicit return*Æ
+1! !()±
+®
+! !((
+%1"/illuminate\support\facades\schema::dropifexists*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*(
+
+__unknown_file (
+
+sessions*
+2B
+createsessionstableH

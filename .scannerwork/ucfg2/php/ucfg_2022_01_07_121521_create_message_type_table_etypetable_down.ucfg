@@ -1,0 +1,19 @@
+
+createmessagetypetable::downi
+_/Users/shenam/efilingupdate/database/migrations/2022_01_07_121521_create_message_type_table.php! !("1*W
+21
+/2022_01_07_121521_create_message_type_table.php"
+$ $(
+implicit return*Ê
+1# #(-µ
+²
+# #(,
+%1"/illuminate\support\facades\schema::dropifexists*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*,
+
+__unknown_file (
+message_type*
+2B
+createmessagetypetableH

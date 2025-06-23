@@ -1,0 +1,19 @@
+
+createrecordstable::downd
+Z/Users/shenam/efilingupdate/database/migrations/2021_12_18_045006_create_records_table.php" "("1*R
+2,
+*2021_12_18_045006_create_records_table.php"
+% %(
+implicit return*Å
+1$ $((°
+­
+$ $('
+%1"/illuminate\support\facades\schema::dropifexists*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*'
+
+__unknown_file (	
+records*
+2B
+createrecordstableH

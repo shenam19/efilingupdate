@@ -1,0 +1,109 @@
+
+q__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2023_03_20_103350_create_registers_table.php_16_36f
+\/Users/shenam/efilingupdate/database/migrations/2023_03_20_103350_create_registers_table.php$ (,"1*T
+2.
+,2023_03_20_103350_create_registers_table.php"
+ (	
+implicit return*ˆ	
+1 (j
+h
+$ (,
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idvt
+ (0
+%2*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+organization_id2	foreignidfd
+ (B
+%3*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+id2
+referencestr
+ (b
+%4*"
+
+__unknown_file (
+
+%3*8
+
+__unknown_file (
+organization_hierarchies2onom
+ ()
+%5*&
+
+__unknown_file (
+
+
+$table*+
+
+__unknown_file (
+fiscal_year2stringxv
+ (2
+%6*&
+
+__unknown_file (
+
+
+$table*+
+
+__unknown_file (
+outgoing_no2unsignedintegera_
+ (>
+%7*"
+
+__unknown_file (
+
+%6* 
+
+__unknown_file (22defaultxv
+ (2
+%8*&
+
+__unknown_file (
+
+
+$table*+
+
+__unknown_file (
+incoming_no2unsignedintegera_
+ (>
+%9*"
+
+__unknown_file (
+
+%8* 
+
+__unknown_file (22defaultGE
+ ( 
+%10*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+. (>.
+$table$illuminate\database\schema\blueprintB
+createregisterstableH

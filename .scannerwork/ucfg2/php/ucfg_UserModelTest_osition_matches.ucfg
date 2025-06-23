@@ -1,0 +1,141 @@
+
+6tests\unit\models\usermodeltest::test_position_matchesI
+?/Users/shenam/efilingupdate/tests/Unit/Models/UserModelTest.php% %()"1*9
+2
+UserModelTest.php"
+1 1(
+implicit return*�
+1' '(&$
+' '(
+$user"app\models\userW
+U
+' '(
+%1"app\models\user::__construct*%
+
+__unknown_file (	
+
+$user�
+�
+( ((A
+%2"app\models\position::where*3
+
+__unknown_file ("
+app\models\position*,
+
+__unknown_file (
+name_tibetan*>
+
+__unknown_file (" 
+རྒན་དྲུང་།=;
+( ((J
+%3*"
+
+__unknown_file (
+
+%22firstC
+A
+( ((J
+	$position"__id*"
+
+__unknown_file (
+
+%3^
+\
+) )(/
+
+$user"
+name"__id*7
+
+__unknown_file (
+Front Desk Data Sectiona
+_
+* *(2
+
+$user"
+email"__id*9
+
+__unknown_file (
+front_Desk_data@tibet.netn
+l
++ +(0
+%4"
+hash::make*$
+
+__unknown_file ("
+hash*(
+
+__unknown_file (
+
+passwordM
+K
++ +(0
+
+$user"
+
+password"__id*"
+
+__unknown_file (
+
+%4K
+I
+, ,(
+
+$user"
+
+works_at"__id* 
+
+__unknown_file (2K
+I
+- -(*
+%5"__id*1
+
+__unknown_file (*
+
+	$position"
+idP
+N
+- -(*
+
+$user"
+position_id"__id*"
+
+__unknown_file (
+
+%5?=
+. .(
+%6*%
+
+__unknown_file (	
+
+$user2saveK
+I
+0 0()
+%7"__id*1
+
+__unknown_file (*
+
+	$position"
+idP
+N
+0+ 0(=
+%8"__id*6
+
+__unknown_file (*
+
+$user"
+position_id��
+0 0(>
+%9*?
+
+__unknown_file (#!
+tests\unit\models\usermodeltest*"
+
+__unknown_file (
+
+%7*"
+
+__unknown_file (
+
+%82assertequals*
+2B#!
+tests\unit\models\usermodeltestH

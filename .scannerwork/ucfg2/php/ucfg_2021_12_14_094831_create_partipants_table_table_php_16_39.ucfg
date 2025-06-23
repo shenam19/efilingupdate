@@ -1,0 +1,72 @@
+
+r__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_14_094831_create_partipants_table.php_16_39g
+]/Users/shenam/efilingupdate/database/migrations/2021_12_14_094831_create_partipants_table.php' (/"1*U
+2/
+-2021_12_14_094831_create_partipants_table.php"
+ (	
+implicit return*Â
+1 (j
+h
+' (/
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idpn
+ (*
+%2*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	thread_id2	foreignidlj
+ (B
+%3*"
+
+__unknown_file (
+
+%2*'
+
+__unknown_file (	
+threads2constrainednl
+ ((
+%4*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+user_id2	foreignidjh
+ (>
+%5*"
+
+__unknown_file (
+
+%4*%
+
+__unknown_file (	
+users2constrainedFD
+ ( 
+%6*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+1 (A.
+$table$illuminate\database\schema\blueprintB
+createpartipantstableH

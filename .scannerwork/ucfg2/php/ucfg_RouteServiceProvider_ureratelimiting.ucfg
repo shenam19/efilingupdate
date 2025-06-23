@@ -1,0 +1,30 @@
+
+9app\providers\routeserviceprovider::configureratelimitingL
+B/Users/shenam/efilingupdate/app/Providers/RouteServiceProvider.phpE E(,"1*@
+2
+RouteServiceProvider.php"
+J J(
+implicit return*ˆ
+1G I(Ÿ
+œ
+G  I(	
+%1"__declareFunction*w
+
+__unknown_file ([Y
+W__sonar_lambda_/Users/shenam/efilingupdate/app/Providers/RouteServiceProvider.php_71_32Ñ
+Î
+G I(
+
+%2"+illuminate\support\facades\ratelimiter::for*F
+
+__unknown_file (*"(
+&illuminate\support\facades\ratelimiter*#
+
+__unknown_file (
+api*"
+
+__unknown_file (
+
+%1*
+2B&$
+"app\providers\routeserviceproviderH

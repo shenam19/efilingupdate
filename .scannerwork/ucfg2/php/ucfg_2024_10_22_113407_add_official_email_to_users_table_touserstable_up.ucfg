@@ -1,0 +1,30 @@
+
+ addofficialemailtouserstable::upq
+g/Users/shenam/efilingupdate/database/migrations/2024_10_22_113407_add_official_email_to_users_table.php ("1*_
+29
+72024_10_22_113407_add_official_email_to_users_table.php"
+ (
+implicit return*©
+1 (∆
+√
+ (	
+%1"__declareFunction*ù
+
+__unknown_file (Ä~
+|__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2024_10_22_113407_add_official_email_to_users_table.php_16_31À
+»
+ (
+
+%2"(illuminate\support\facades\schema::table*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*%
+
+__unknown_file (	
+users*"
+
+__unknown_file (
+
+%1*
+2B 
+addofficialemailtouserstableH

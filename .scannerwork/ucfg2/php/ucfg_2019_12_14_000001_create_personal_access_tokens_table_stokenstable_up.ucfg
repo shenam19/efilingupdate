@@ -1,0 +1,30 @@
+
+#createpersonalaccesstokenstable::ups
+i/Users/shenam/efilingupdate/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php ("1*a
+2;
+92019_12_14_000001_create_personal_access_tokens_table.php"
+ (
+implicit return*¾
+1 (É
+Æ
+1 (	
+%1"__declareFunction* 
+
+__unknown_file (ƒ€
+~__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php_16_49Ý
+Ú
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*6
+
+__unknown_file (
+personal_access_tokens*"
+
+__unknown_file (
+
+%1*
+2B#!
+createpersonalaccesstokenstableH

@@ -1,0 +1,119 @@
+
+p__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_13_034834_create_sessions_table.php_16_35e
+[/Users/shenam/efilingupdate/database/migrations/2021_12_13_034834_create_sessions_table.php# (+"1*S
+2-
++2021_12_13_034834_create_sessions_table.php"
+ (	
+implicit return*À	
+1 (,j
+h
+# (+
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintfd
+ ( 
+%1*&
+
+__unknown_file (
+
+
+$table*"
+
+__unknown_file (
+id2string?=
+ (+
+%2*"
+
+__unknown_file (
+
+%12primarynl
+ ((
+%3*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+user_id2	foreignid@>
+ (4
+%4*"
+
+__unknown_file (
+
+%32nullable=;
+ (=
+%5*"
+
+__unknown_file (
+
+%42index‘Ž
+ (,
+%6*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+ip_address* 
+
+__unknown_file (2-2string@>
+ (8
+%7*"
+
+__unknown_file (
+
+%62nullablelj
+ (&
+%8*&
+
+__unknown_file (
+
+
+$table**
+
+__unknown_file (
+
+user_agent2text@>
+ (2
+%9*"
+
+__unknown_file (
+
+%82nullablejh
+ (#
+%10*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+payload2textsq
+ (,
+%11*&
+
+__unknown_file (
+
+
+$table*-
+
+__unknown_file (
+last_activity2integer?=
+ (5
+%12*#
+
+__unknown_file (
+
+%112index*
+2::
+- (=.
+$table$illuminate\database\schema\blueprintB
+createsessionstableH

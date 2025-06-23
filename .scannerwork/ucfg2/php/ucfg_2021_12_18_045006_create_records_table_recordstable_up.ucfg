@@ -1,0 +1,30 @@
+
+createrecordstable::upd
+Z/Users/shenam/efilingupdate/database/migrations/2021_12_18_045006_create_records_table.php ("1*R
+2,
+*2021_12_18_045006_create_records_table.php"
+ (
+implicit return*û
+1 (∏
+µ
+" (	
+%1"__declareFunction*è
+
+__unknown_file (sq
+o__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_18_045006_create_records_table.php_16_34Œ
+À
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*'
+
+__unknown_file (	
+records*"
+
+__unknown_file (
+
+%1*
+2B
+createrecordstableH

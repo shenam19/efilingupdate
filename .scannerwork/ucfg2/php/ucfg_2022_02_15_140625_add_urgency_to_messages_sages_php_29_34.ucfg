@@ -1,0 +1,30 @@
+
+r__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_02_15_140625_add_urgency_to_messages.php_29_34g
+]/Users/shenam/efilingupdate/database/migrations/2022_02_15_140625_add_urgency_to_messages.php" (*"1*U
+2/
+-2022_02_15_140625_add_urgency_to_messages.php"
+   (	
+implicit return*ï
+1 (*j
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintom
+ ()
+%1*&
+
+__unknown_file (
+
+
+$table*'
+
+__unknown_file (	
+urgency2
+dropcolumn*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB
+addurgencytomessagesH

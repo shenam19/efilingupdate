@@ -1,0 +1,71 @@
+
+r__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_02_01_103141_create_pull_backs_table.php_16_37g
+]/Users/shenam/efilingupdate/database/migrations/2022_02_01_103141_create_pull_backs_table.php% (-"1*U
+2/
+-2022_02_01_103141_create_pull_backs_table.php"
+ (	
+implicit return*˜
+1 (j
+h
+% (-
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint><
+ (
+%1*&
+
+__unknown_file (
+
+
+$table2idhf
+ ("
+%2*&
+
+__unknown_file (
+
+
+$table*&
+
+__unknown_file (
+
+reason2textus
+ (/
+%3*&
+
+__unknown_file (
+
+
+$table*.
+
+__unknown_file (
+new_message_id2	foreignid@>
+ (;
+%4*"
+
+__unknown_file (
+
+%32nullablemk
+ (T
+%5*"
+
+__unknown_file (
+
+%4*(
+
+__unknown_file (
+
+messages2constrainedFD
+ ( 
+%6*&
+
+__unknown_file (
+
+
+$table2
+timestamps*
+2::
+/ (?.
+$table$illuminate\database\schema\blueprintB
+createpullbackstableH

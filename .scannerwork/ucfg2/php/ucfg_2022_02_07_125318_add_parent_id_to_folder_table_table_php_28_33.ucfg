@@ -1,0 +1,30 @@
+
+x__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_02_07_125318_add_parent_id_to_folder_table.php_28_33m
+c/Users/shenam/efilingupdate/database/migrations/2022_02_07_125318_add_parent_id_to_folder_table.php! ()"1*[
+25
+32022_02_07_125318_add_parent_id_to_folder_table.php"
+ (	
+implicit return*ñ
+1 (,j
+h
+! ()
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintqo
+ (+
+%1*&
+
+__unknown_file (
+
+
+$table*)
+
+__unknown_file (
+	parent_id2
+dropcolumn*
+2::
++ (;.
+$table$illuminate\database\schema\blueprintB
+addparentidtofoldertableH

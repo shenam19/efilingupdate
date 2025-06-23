@@ -1,0 +1,26 @@
+
+r__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_04_123359_add_soft_delete_to_user.php_16_31g
+]/Users/shenam/efilingupdate/database/migrations/2022_01_04_123359_add_soft_delete_to_user.php ('"1*U
+2/
+-2022_01_04_123359_add_soft_delete_to_user.php"
+ (	
+implicit return*Ç
+1 ("j
+h
+ ('
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintGE
+ (!
+%1*&
+
+__unknown_file (
+
+
+$table2softdeletes*
+2::
+) (9.
+$table$illuminate\database\schema\blueprintB
+addsoftdeletetouserH

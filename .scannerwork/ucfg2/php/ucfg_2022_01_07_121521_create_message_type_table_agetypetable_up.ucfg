@@ -1,0 +1,30 @@
+
+createmessagetypetable::upi
+_/Users/shenam/efilingupdate/database/migrations/2022_01_07_121521_create_message_type_table.php ("1*W
+21
+/2022_01_07_121521_create_message_type_table.php"
+ (
+implicit return*¨
+1 (½
+º
+' (	
+%1"__declareFunction*”
+
+__unknown_file (xv
+t__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_07_121521_create_message_type_table.php_16_39Ó
+Ð
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*,
+
+__unknown_file (
+message_type*"
+
+__unknown_file (
+
+%1*
+2B
+createmessagetypetableH

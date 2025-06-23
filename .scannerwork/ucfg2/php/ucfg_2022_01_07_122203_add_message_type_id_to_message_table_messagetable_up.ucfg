@@ -1,0 +1,31 @@
+
+"addmessagetypeidtomessagetable::upt
+j/Users/shenam/efilingupdate/database/migrations/2022_01_07_122203_add_message_type_id_to_message_table.php ("1*b
+2<
+:2022_01_07_122203_add_message_type_id_to_message_table.php"
+ (
+implicit return*°
+1 (Ê
+Ç
+" (	
+%1"__declareFunction*¡
+
+__unknown_file („
+__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_07_122203_add_message_type_id_to_message_table.php_16_34Î
+Ë
+ (
+
+%2"(illuminate\support\facades\schema::table*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*(
+
+__unknown_file (
+
+messages*"
+
+__unknown_file (
+
+%1*
+2B" 
+addmessagetypeidtomessagetableH

@@ -1,0 +1,35 @@
+
+~__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_01_06_095943_add_incoming_outgoing_to_recipients.php_16_36s
+i/Users/shenam/efilingupdate/database/migrations/2022_01_06_095943_add_incoming_outgoing_to_recipients.php$ (,"1*a
+2;
+92022_01_06_095943_add_incoming_outgoing_to_recipients.php"
+ (	
+implicit return*½
+1 (Bj
+h
+$ (,
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprint{y
+ (5
+%1*&
+
+__unknown_file (
+
+
+$table*+
+
+__unknown_file (
+incoming_no2unsignedbiginteger@>
+ (A
+%2*"
+
+__unknown_file (
+
+%12nullable*
+2::
+. (>.
+$table$illuminate\database\schema\blueprintB#!
+addincomingoutgoingtorecipientsH

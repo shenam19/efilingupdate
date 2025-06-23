@@ -1,0 +1,31 @@
+
+&changemessagespullbackidconstraint::upw
+m/Users/shenam/efilingupdate/database/migrations/2022_06_06_154057_change_messages_pull_back_id_constraint.php ("1*e
+2?
+=2022_06_06_154057_change_messages_pull_back_id_constraint.php"
+ (
+implicit return*´
+1 (Î
+Ë
+" (	
+%1"__declareFunction*¥
+
+__unknown_file (ˆ…
+‚__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_06_06_154057_change_messages_pull_back_id_constraint.php_16_34Î
+Ë
+ (
+
+%2"(illuminate\support\facades\schema::table*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*(
+
+__unknown_file (
+
+messages*"
+
+__unknown_file (
+
+%1*
+2B&$
+"changemessagespullbackidconstraintH

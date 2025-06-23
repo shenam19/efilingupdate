@@ -1,0 +1,48 @@
+
+U__sonar_lambda_/Users/shenam/efilingupdate/app/Providers/AppServiceProvider.php_80_24J
+@/Users/shenam/efilingupdate/app/Providers/AppServiceProvider.phpP P( "1*>
+2
+AppServiceProvider.php"
+R R(
+implicit return*œ
+1Q Q(Sj
+h
+P P( 
+$query"__id*L
+
+__unknown_file (0
+.
+$query$illuminate\database\eloquent\builder_
+]
+Q@ Q(Q
+%1"__concat*
+QA Q(B
+%*
+QO Q(P
+%*
+QB Q(O
+
+$searchTermº·
+Q Q(R
+%2*&
+
+__unknown_file (
+
+
+$query**
+
+__unknown_file (
+
+
+$attribute*$
+
+__unknown_file (
+LIKE*"
+
+__unknown_file (
+
+%12orwhere*
+2::
+P" P(0.
+$query$illuminate\database\eloquent\builderB$"
+ app\providers\appserviceproviderH

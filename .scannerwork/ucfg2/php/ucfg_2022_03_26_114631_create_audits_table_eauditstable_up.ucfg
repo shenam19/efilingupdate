@@ -1,0 +1,31 @@
+
+createauditstable::upc
+Y/Users/shenam/efilingupdate/database/migrations/2022_03_26_114631_create_audits_table.php ("1*Q
+2+
+)2022_03_26_114631_create_audits_table.php"
+   (
+implicit return*œ
+1 (·
+´
+! (	
+%1"__declareFunction*Ž
+
+__unknown_file (rp
+n__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2022_03_26_114631_create_audits_table.php_16_33Í
+Ê
+ (
+
+%2")illuminate\support\facades\schema::create*A
+
+__unknown_file (%"#
+!illuminate\support\facades\schema*&
+
+__unknown_file (
+
+audits*"
+
+__unknown_file (
+
+%1*
+2B
+createauditstableH

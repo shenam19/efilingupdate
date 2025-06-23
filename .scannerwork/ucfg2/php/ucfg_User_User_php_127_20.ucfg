@@ -1,0 +1,142 @@
+
+E__sonar_lambda_/Users/shenam/efilingupdate/app/Models/User.php_127_209
+//Users/shenam/efilingupdate/app/Models/User.php ("1*2
+2
+
+User.php"!
+
+‚ ‚(
+implicit return*Á
+1
+€ €(Lb
+`
+ (
+$q"__id*H
+
+__unknown_file (,
+*
+$q$illuminate\database\eloquent\builder
+
+
+€ €(;
+%1"app\models\models::table*1
+
+__unknown_file ("
+app\models\models*,
+
+__unknown_file (
+participantsR
+P
+
+€ €(J
+%2"__concat*
+
+€ €(;
+
+%1*
+
+€> €(J
+
+.last_readge
+
+€ €(K
+%3*"
+
+__unknown_file (
+
+$q*"
+
+__unknown_file (
+
+%22	wherenull‹
+ˆ
+
+ (4
+%4"app\models\models::table*1
+
+__unknown_file ("
+app\models\models*'
+
+__unknown_file (	
+threadsS
+Q
+
+ (D
+%5"__concat*
+
+ (4
+
+%4*
+
+7 (D
+.updated_atTR
+
+K (a
+%6*/
+
+__unknown_file (
+app\models\user2getconnectionTR
+
+g (}
+%7*/
+
+__unknown_file (
+app\models\user2getconnectionIG
+g (
+%8*"
+
+__unknown_file (
+
+%72gettableprefix’
+
+’ (¯
+%9"app\models\models::table*1
+
+__unknown_file ("
+app\models\models*,
+
+__unknown_file (
+participantso
+m
+g (¾
+%10"__concat*
+g (
+
+%8*
+’ (¯
+
+%9*
+² (¾
+
+.last_readdb
+K (¿
+%11*"
+
+__unknown_file (
+
+%6*#
+
+__unknown_file (
+
+%102raw°­
+ (À
+%12*"
+
+__unknown_file (
+
+$q*"
+
+__unknown_file (
+
+%5*!
+
+__unknown_file (
+>*#
+
+__unknown_file (
+
+%112orwhere*
+2:6
+ ((*
+$q$illuminate\database\eloquent\builderB
+app\models\userH

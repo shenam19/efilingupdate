@@ -1,0 +1,67 @@
+
+[__sonar_lambda_/Users/shenam/efilingupdate/app/Http/Controllers/MessageController.php_46_26P
+F/Users/shenam/efilingupdate/app/Http/Controllers/MessageController.php. .(""1*=
+2
+MessageController.php"
+1 1(	
+implicit return*”
+1/ /(\K
+I
+/ /()
+%1"__id*1
+
+__unknown_file (*
+
+$front"
+labelR
+P
+/4 /(H
+%2"__id*8
+
+__unknown_file (*
+
+$front"
+organizationL
+J
+/4 /(T
+%3"__id*2
+
+__unknown_file (*
+
+%2"
+
+name_shortm
+k
+/ /([
+%4"__concat*
+/ /()
+
+%1*
+/, /(1
+ ( *
+/4 /(T
+
+%3*
+/W /([
+ )K
+I
+/ /([
+
+$front"
+label"__id*"
+
+__unknown_file (
+
+%4U
+S
+0 0((
+
+$front"
+is_colleague"__id*%
+
+__unknown_file (	
+false*
+2:
+.$ .(*
+$frontB*(
+&app\http\controllers\messagecontrollerH

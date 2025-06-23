@@ -1,0 +1,447 @@
+
+ttests\unit\controllers\organizationstructurecontrollertest::test_adding_organization_to_same_org_where_user_works_atd
+Z/Users/shenam/efilingupdate/tests/Unit/Controllers/OrganizationStructureControllerTest.php7 7(L"1*O
+2)
+'OrganizationStructureControllerTest.php"
+Y Y(
+implicit return*ž+
+19 9(MÌ
+É
+9 9(C
+%1"'app\models\organizationhierarchy::where*@
+
+__unknown_file ($""
+ app\models\organizationhierarchy*$
+
+__unknown_file (
+name*&
+
+__unknown_file (
+
+Kashag=;
+9 9(L
+%2*"
+
+__unknown_file (
+
+%12firstD
+B
+9 9(L
+
+$kashagOrg"__id*"
+
+__unknown_file (
+
+%2¸
+µ
+: :(A
+%3"app\models\user::where*/
+
+__unknown_file ("
+app\models\user*$
+
+__unknown_file (
+name*4
+
+__unknown_file (
+front desk of Kashag=;
+: :(J
+%4*"
+
+__unknown_file (
+
+%32firstE
+C
+: :(J
+$kashagUser"__id*"
+
+__unknown_file (
+
+%4L
+J
+; ;(*
+%5"__id*2
+
+__unknown_file (*
+
+
+$kashagOrg"
+idS
+Q
+;, ;(A
+%6"__id*9
+
+__unknown_file (*
+
+$kashagUser"
+
+works_atÅÂ
+; ;(B
+%7*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*"
+
+__unknown_file (
+
+%5*"
+
+__unknown_file (
+
+%62assertequals~|
+< <(F
+%8*+
+
+__unknown_file (
+
+$kashagUser*8
+
+__unknown_file (
+manage sub organizations2canŸœ
+< <(G
+%9*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*"
+
+__unknown_file (
+
+%82
+asserttrue§¤
+> >(0
+%10*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*+
+
+__unknown_file (
+
+$kashagUser2actingas
+>U B(	
+%11"$ArrayŸ
+œ
+>U B(	
+%12"__mapSet*#
+
+__unknown_file (
+
+%11**
+
+__unknown_file (
+
+name_short*.
+
+__unknown_file (
+Org und Kashag¤
+¡
+>U B(	
+%13"__mapSet*#
+
+__unknown_file (
+
+%11*$
+
+__unknown_file (
+name*9
+
+__unknown_file (
+Organization Under KashagM
+K
+A A("
+%14"__id*2
+
+__unknown_file (*
+
+
+$kashagOrg"
+idŒ
+‰
+>U B(	
+%15"__mapSet*#
+
+__unknown_file (
+
+%11*"
+
+__unknown_file (
+id*#
+
+__unknown_file (
+
+%14 
+> B(
+
+%16*#
+
+__unknown_file (
+
+%10*:
+
+__unknown_file (
+organization-structure/add*#
+
+__unknown_file (
+
+%112postD
+B
+> B(
+
+	$response"__id*#
+
+__unknown_file (
+
+%16om
+D D($
+%17*)
+
+__unknown_file (
+
+	$response*!
+
+__unknown_file (2®2assertstatus
+E= I(	
+%18"$ArrayŸ
+œ
+E= I(	
+%19"__mapSet*#
+
+__unknown_file (
+
+%18**
+
+__unknown_file (
+
+name_short*.
+
+__unknown_file (
+Org und Kashag¤
+¡
+E= I(	
+%20"__mapSet*#
+
+__unknown_file (
+
+%18*$
+
+__unknown_file (
+name*9
+
+__unknown_file (
+Organization Under KashagM
+K
+H H(-
+%21"__id*2
+
+__unknown_file (*
+
+
+$kashagOrg"
+id—
+”
+E= I(	
+%22"__mapSet*#
+
+__unknown_file (
+
+%18*-
+
+__unknown_file (
+belongs_to_id*#
+
+__unknown_file (
+
+%21âß
+E I(
+
+%23*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*8
+
+__unknown_file (
+organization_hierarchies*#
+
+__unknown_file (
+
+%182assertdatabasehasà
+Ý
+K K(S
+%24"'app\models\organizationhierarchy::where*@
+
+__unknown_file ($""
+ app\models\organizationhierarchy*$
+
+__unknown_file (
+name*9
+
+__unknown_file (
+Organization Under Kashag?=
+K K(\
+%25*#
+
+__unknown_file (
+
+%242firstB
+@
+K K(\	
+$subOrg"__id*#
+
+__unknown_file (
+
+%25§¤
+M M(0
+%26*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*+
+
+__unknown_file (
+
+$kashagUser2actingas
+MU Q(	
+%27"$Array¡
+ž
+MU Q(	
+%28"__mapSet*#
+
+__unknown_file (
+
+%27**
+
+__unknown_file (
+
+name_short*0
+
+__unknown_file (
+Sub Org und respª
+§
+MU Q(	
+%29"__mapSet*#
+
+__unknown_file (
+
+%27*$
+
+__unknown_file (
+name*?
+
+__unknown_file (#!
+Sub Organization Under ResponseJ
+H
+P P(
+%30"__id*/
+
+__unknown_file (*
+	
+$subOrg"
+idŒ
+‰
+MU Q(	
+%31"__mapSet*#
+
+__unknown_file (
+
+%27*"
+
+__unknown_file (
+id*#
+
+__unknown_file (
+
+%30 
+M Q(
+
+%32*#
+
+__unknown_file (
+
+%26*:
+
+__unknown_file (
+organization-structure/add*#
+
+__unknown_file (
+
+%272postD
+B
+M Q(
+
+	$reponse1"__id*#
+
+__unknown_file (
+
+%32om
+S S($
+%33*)
+
+__unknown_file (
+
+	$reponse1*!
+
+__unknown_file (2®2assertstatus
+T= X(	
+%34"$Array¡
+ž
+T= X(	
+%35"__mapSet*#
+
+__unknown_file (
+
+%34**
+
+__unknown_file (
+
+name_short*0
+
+__unknown_file (
+Sub Org und respª
+§
+T= X(	
+%36"__mapSet*#
+
+__unknown_file (
+
+%34*$
+
+__unknown_file (
+name*?
+
+__unknown_file (#!
+Sub Organization Under ResponseJ
+H
+W W(*
+%37"__id*/
+
+__unknown_file (*
+	
+$subOrg"
+id—
+”
+T= X(	
+%38"__mapSet*#
+
+__unknown_file (
+
+%34*-
+
+__unknown_file (
+belongs_to_id*#
+
+__unknown_file (
+
+%37âß
+T X(
+
+%39*Z
+
+__unknown_file (><
+:tests\unit\controllers\organizationstructurecontrollertest*8
+
+__unknown_file (
+organization_hierarchies*#
+
+__unknown_file (
+
+%342assertdatabasehas*
+2B><
+:tests\unit\controllers\organizationstructurecontrollertestH

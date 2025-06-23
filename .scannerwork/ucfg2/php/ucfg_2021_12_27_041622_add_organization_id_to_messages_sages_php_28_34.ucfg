@@ -1,0 +1,30 @@
+
+z__sonar_lambda_/Users/shenam/efilingupdate/database/migrations/2021_12_27_041622_add_organization_id_to_messages.php_28_34o
+e/Users/shenam/efilingupdate/database/migrations/2021_12_27_041622_add_organization_id_to_messages.php" (*"1*]
+27
+52021_12_27_041622_add_organization_id_to_messages.php"
+ (	
+implicit return*÷
+1 (2j
+h
+" (*
+$table"__id*L
+
+__unknown_file (0
+.
+$table$illuminate\database\schema\blueprintwu
+ (1
+%1*&
+
+__unknown_file (
+
+
+$table*/
+
+__unknown_file (
+organization_id2
+dropcolumn*
+2::
+, (<.
+$table$illuminate\database\schema\blueprintB
+addorganizationidtomessagesH

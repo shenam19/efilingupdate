@@ -1,0 +1,55 @@
+
+atests\unit\models\usermodeltest::test_to_check_whether_the_particular_user_is_receptionist_or_notI
+?/Users/shenam/efilingupdate/tests/Unit/Models/UserModelTest.php (T"1*9
+2
+UserModelTest.php"
+# #(
+implicit return*ƒ
+1! !(E∏
+µ
+! !(;
+%1"app\models\user::where*/
+
+__unknown_file ("
+app\models\user*$
+
+__unknown_file (
+name*4
+
+__unknown_file (
+Front Desk of Kashag=;
+! !(D
+%2*"
+
+__unknown_file (
+
+%12first?
+=
+! !(D
+$user"__id*"
+
+__unknown_file (
+
+%2nl
+" "(6
+%3*%
+
+__unknown_file (	
+
+$user**
+
+__unknown_file (
+
+front desk2hasroleÑÅ
+" "(7
+%4*?
+
+__unknown_file (#!
+tests\unit\models\usermodeltest*"
+
+__unknown_file (
+
+%32
+asserttrue*
+2B#!
+tests\unit\models\usermodeltestH
