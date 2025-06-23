@@ -1,72 +1,89 @@
 name: SonarCloud Analysis
-
 on:
   push:
     branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
-
 jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
-
     services:
       mysql:
         image: mysql:8.0
         ports:
           - 3306:3306
         env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: laravel
-          MYSQL_USER: laravel
-          MYSQL_PASSWORD: secret
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: testing
+          MYSQL_USER: sail
+          MYSQL_PASSWORD: password
         options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+        with:
+          fetch-depth: 0  # Fetch full history for SonarCloud
+      
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
-
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo
+          coverage: xdebug
+      
+      - name: Cache Composer packages
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+      
       - name: Install PHP dependencies
-        run: composer install --no-progress --no-suggest --prefer-dist
-
+        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+      
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
+          cache: 'npm'
+      
       - name: Install Node.js dependencies
         run: npm ci
-
-      - name: Prepare Laravel
+      
+      - name: Create environment file
         run: |
           cp .env.example .env
-          php artisan key:generate
-          php artisan migrate --force
-        env:
-          DB_CONNECTION: mysql
-          DB_HOST: 127.0.0.1
-          DB_PORT: 3306
-          DB_DATABASE: laravel
-          DB_USERNAME: laravel
-          DB_PASSWORD: secret
-
+          echo "APP_ENV=testing" >> .env
+          echo "APP_DEBUG=true" >> .env
+          echo "DB_CONNECTION=mysql" >> .env
+          echo "DB_HOST=127.0.0.1" >> .env
+          echo "DB_PORT=3306" >> .env
+          echo "DB_DATABASE=testing" >> .env
+          echo "DB_USERNAME=sail" >> .env
+          echo "DB_PASSWORD=password" >> .env
+      
+      - name: Generate application key
+        run: php artisan key:generate
+      
+      - name: Wait for MySQL
+        run: |
+          until mysqladmin ping -h 127.0.0.1 -P 3306 -u sail -ppassword --silent; do
+            echo 'Waiting for MySQL...'
+            sleep 1
+          done
+      
+      - name: Run database migrations
+        run: php artisan migrate --force --env=testing
+      
       - name: Generate code coverage report
-        run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+        run: ./vendor/bin/phpunit --coverage-clover=coverage.xml --log-junit=tests/junit.xml
         env:
-          DB_CONNECTION: mysql
-          DB_HOST: 127.0.0.1
-          DB_PORT: 3306
-          DB_DATABASE: laravel
-          DB_USERNAME: laravel
-          DB_PASSWORD: secret
-
+          APP_ENV: testing
+      
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
